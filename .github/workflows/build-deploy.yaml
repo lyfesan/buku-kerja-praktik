@@ -1,0 +1,53 @@
+name: Build
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  build-document:
+    name: Build Document
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out
+        uses: actions/checkout@v4.2.2
+
+      - name: Compile Document
+        uses: xu-cheng/latex-action@4.0.0
+        with:
+          root_file: main.tex
+          texlive_version: 2025
+          args: -pdf -bibtex
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: buku-kp
+          path: main.pdf
+
+  deploy-pages:
+    name: Deploy Pages
+    runs-on: ubuntu-latest
+    needs: build-document
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Rename Document
+        run: mkdir dist && mv main.pdf dist/buku-kp.pdf
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: dist
+
+      - name: Deploy Pages
+        id: deploy-pages
+        uses: actions/deploy-pages@v4.0.5
