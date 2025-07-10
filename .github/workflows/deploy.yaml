@@ -1,12 +1,14 @@
 name: Deploy
 on:
-  workflow_dispatch:
-  push:
+  workflow_run:
+    workflows: ["Build"]
+    types: [completed]
     branches: [main]
 jobs:
   deploy-pages:
     name: Deploy Pages
     runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success'
     permissions:
       id-token: write
       pages: write
@@ -17,15 +19,12 @@ jobs:
       group: pages
       cancel-in-progress: false
     steps:
-      - name: Check Out
-        uses: actions/checkout@v4.2.2
+      - name: Download PDF Artifact
+        uses: actions/download-artifact@v4
         with:
-          token: ${{ secrets.REPO_TOKEN }}
-
-      - name: Compile Document
-        uses: xu-cheng/latex-action@4.0.0
-        with:
-          root_file: main.tex
+          name: buku-kp
+          github_token: ${{ secrets.REPO_TOKEN }}
+          run_id: ${{ github.event.workflow_run.id }}
 
       - name: Rename Document
         run: mkdir dist && mv main.pdf dist/buku-kp.pdf
