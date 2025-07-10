@@ -12,9 +12,6 @@ jobs:
     permissions:
       id-token: write
       pages: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy-pages.outputs.page_url }}
     concurrency:
       group: pages
       cancel-in-progress: false
@@ -23,8 +20,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: buku-kp
-          github_token: ${{ secrets.REPO_TOKEN }}
-          run_id: ${{ github.event.workflow_run.id }}
 
       - name: Rename Document
         run: mkdir dist && mv main.pdf dist/buku-kp.pdf
