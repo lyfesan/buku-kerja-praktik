@@ -1,4 +1,4 @@
-name: Build
+name: Build and Deploy Document
 on:
   workflow_dispatch:
   pull_request:
