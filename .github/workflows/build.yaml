@@ -16,6 +16,7 @@ jobs:
         uses: xu-cheng/latex-action@4.0.0
         with:
           root_file: main.tex
+          texlive_version: 2025
           args: -pdf -bibtex
 
       - name: Upload Artifact
