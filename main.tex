@@ -7,15 +7,18 @@
 % Pengaturan ukuran spasi
 \usepackage[singlespacing]{setspace}
 
+% Gunakan T1 font encoding terbaru untuk texlive 2025
+\usepackage[T1]{fontenc}
+
+% Prevent table overflow
+\usepackage{tabularx}
+
 % Judul dokumen
 \title{Buku Laporan Kerja Praktik ITS}
 \author{Alief Gilang Permana Putra}
 
 % Pengaturan format bahasa
 \usepackage[indonesian]{babel}
-
-% Pengaturan detail pada file PDF
-\usepackage[pdfauthor={\@author},bookmarksnumbered,pdfborder={0 0 0}]{hyperref}
 
 % Pengaturan jenis karakter
 \usepackage[utf8]{inputenc}
@@ -33,18 +36,31 @@
 \usepackage{graphicx} % Input gambar
 \usepackage{longtable} % Pembuatan tabel
 \usepackage[table,xcdraw]{xcolor} % Pewarnaan tabel
-\usepackage[numbers]{natbib} % Kutipan artikel
+\usepackage[numbers]{natbib} % Kutipan artikel menggunakan angka
+%\usepackage{natbib} % Kutipan artikel
 \usepackage{eso-pic} % Pembuatan background
 \usepackage{changepage} % Pembuatan teks kolom
 \usepackage{wrapfig} % Wrapping gambar
 
-% Definisi untuk "Hati ini sengaja dikosongkan"
+% Pengaturan detail pada file PDF
+\usepackage[pdfauthor={\@author},bookmarksnumbered,pdfborder={0 0 0}]{hyperref}
+
+% Definisi untuk "Halaman ini sengaja dikosongkan"
 \def\kosong{
-  \vspace*{\fill}
-  \begin{center}\textit{Halaman ini sengaja dikosongkan}\end{center}
-  \vfill
+  \begin{center}\textit{[Halaman ini sengaja dikosongkan]}\end{center}
 }
-\patchcmd{\cleardoublepage}{\hbox{}}{\kosong}{}{}
+
+% Definisi baru yang lebih baik untuk "Halaman ini sengaja dikosongkan"
+\newcommand{\halamankosong}{
+	\newpage
+	%\thispagestyle{empty}
+	\begin{center}
+		\textit{[Halaman ini sengaja dikosongkan]}
+	\end{center}
+	\clearpage
+}
+\patchcmd{\cleardoublepage}{\hbox{}}{\halamankosong}{}{}
+
 
 % Pengaturan penomoran halaman
 \usepackage{fancyhdr}
@@ -102,40 +118,51 @@
 
   % Sampul luar
   \input{sampul/sampul-luar.tex}
-  \cleardoublepage
 
   % Sampul dalam
   \input{sampul/sampul-dalam.tex}
   \cleardoublepage
-
-  % Lembar pengesahaan untuk departemen
-  \input{pengesahan/pengesahan-departemen.tex}
-  \cleardoublepage
-
-  % Lembar pengesahan untuk perusahaan
-  \input{pengesahan/pengesahan-perusahaan.tex}
-  \cleardoublepage
-
-  % Kata pengantar
-  \input{lainnya/kata-pengantar.tex}
-  \cleardoublepage
-
-  % Daftar isi
+  
+  \halamankosong
+  
+   % Daftar isi
   \renewcommand*\contentsname{DAFTAR ISI}
+  \phantomsection
   \addcontentsline{toc}{chapter}{\contentsname}
   \tableofcontents
   \cleardoublepage
+  
+  % Lembar pengesahan untuk perusahaan
+  %\input{pengesahan/pengesahan-perusahaan.tex}
+  %\cleardoublepage
 
   % Daftar gambar
   \renewcommand*\listfigurename{DAFTAR GAMBAR}
+  \phantomsection
   \addcontentsline{toc}{chapter}{\listfigurename}
   \listoffigures
   \cleardoublepage
 
   % Daftar tabel
   \renewcommand*\listtablename{DAFTAR TABEL}
+  \phantomsection
   \addcontentsline{toc}{chapter}{\listtablename}
   \listoftables
+  \cleardoublepage
+  
+  % Lembar pengesahaan untuk departemen
+  \phantomsection
+  \input{pengesahan/pengesahan-departemen.tex}
+  \cleardoublepage
+  
+  % Abstrak
+  \phantomsection
+  \input{lainnya/abstrak.tex}
+  \cleardoublepage
+  
+  % Kata pengantar
+  \phantomsection
+  \input{lainnya/kata-pengantar.tex}
   \cleardoublepage
 
   % Nomor halaman isi dimulai dari sini
@@ -167,13 +194,15 @@
 
   % Daftar pustaka
   \renewcommand\bibname{DAFTAR PUSTAKA}
+  \phantomsection
   \addcontentsline{toc}{chapter}{\bibname}
-  \bibliographystyle{unsrtnat}
+  \bibliographystyle{unsrt}
   \bibliography{pustaka/pustaka.bib}
   \cleardoublepage
 
-  % Biografi penulis
-  \input{lainnya/biografi-penulis.tex}
+  % Biodata penulis
+  \phantomsection
+  \input{lainnya/biodata-penulis.tex}
   \cleardoublepage
 
 \end{document}
