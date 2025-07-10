@@ -19,11 +19,13 @@ jobs:
           texlive_version: 2025
           args: -pdf -bibtex
 
+      - name: Rename document
+        run: mkdir dist && mv main.pdf dist/buku-kp.pdf
+
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
-          name: buku-kp
-          path: main.pdf
+          path: dist
 
   deploy-pages:
     name: Deploy Pages
@@ -40,14 +42,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Rename Document
-        run: mkdir dist && mv main.pdf dist/buku-kp.pdf
-
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3.0.1
-        with:
-          path: dist
-
+      - name: Configure Pages
+        uses: actions/configure-pages@v5.0.0
+        
       - name: Deploy Pages
         id: deploy-pages
         uses: actions/deploy-pages@v4.0.5
