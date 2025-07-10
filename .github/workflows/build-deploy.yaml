@@ -38,13 +38,10 @@ jobs:
     concurrency:
       group: pages
       cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Configure Pages
         uses: actions/configure-pages@v5.0.0
-        
+
       - name: Deploy Pages
         id: deploy-pages
         uses: actions/deploy-pages@v4.0.5
