@@ -7,8 +7,19 @@
 % Pengaturan ukuran spasi
 \usepackage[singlespacing]{setspace}
 
+% Font Times New Roman
+%\usepackage{mathptmx}
+
 % Gunakan T1 font encoding terbaru untuk texlive 2025
 \usepackage[T1]{fontenc}
+
+% Gunakan package untuk fonts
+% NOTE: Gunakan Compiler XeLaTex atau LuaLaTex karena default 
+% pdflatex tidak mendukung fontspec
+\usepackage{fontspec}
+
+% Gunakan font Trebuchet
+%\usepackage{trebuchet}
 
 % Prevent table overflow
 \usepackage{tabularx}
@@ -47,15 +58,15 @@
 
 % Definisi untuk "Halaman ini sengaja dikosongkan"
 \def\kosong{
-  \begin{center}\textit{[Halaman ini sengaja dikosongkan]}\end{center}
+  \begin{center}\textit{Halaman ini sengaja dikosongkan}\end{center}
 }
 
 % Definisi baru yang lebih baik untuk "Halaman ini sengaja dikosongkan"
 \newcommand{\halamankosong}{
 	\newpage
-	%\thispagestyle{empty}
+	\thispagestyle{fancy}
 	\begin{center}
-		\textit{[Halaman ini sengaja dikosongkan]}
+		\textit{Halaman ini sengaja dikosongkan}
 	\end{center}
 	\clearpage
 }
@@ -112,16 +123,24 @@
 
 % Isi keseluruhan dokumen
 \begin{document}
-
+  % Gunakan font Times New Roman
+  \setmainfont{Times New Roman}
   % Nomor halaman pembuka dimulai dari sini
   \pagenumbering{roman}
 
   % Sampul luar
-  \input{sampul/sampul-luar.tex}
+  {
+  	\setmainfont{Trebuchet MS}\color{white}
+  	\input{sampul/sampul-luar.tex}
+  }
+  
 
   % Sampul dalam
-  \input{sampul/sampul-dalam.tex}
-  \cleardoublepage
+  {
+  	\setmainfont{Trebuchet MS}
+  	\input{sampul/sampul-dalam.tex}
+  	%\cleardoublepage
+  }
   
   \halamankosong
   
