@@ -4,15 +4,263 @@ disediakan oleh penyedia sumber referensi secara online dan bisa langsung diguna
 
 Lihat https://www.bibtex.com/g/bibtex-format/ untuk informasi lebih lanjut mengenai format
 BibTex yang digunakan pada file ini.
+  
+@article{Safari2024,
+	abstract = {Background: High-resolution magnetic resonance imaging (MRI) with excellent soft-tissue contrast is a valuable tool utilized for diagnosis and prognosis. However, MRI sequences with long acquisition time are susceptible to motion artifacts, which can adversely affect the accuracy of post-processing algorithms. Purpose: This study proposes a novel retrospective motion correction method named “motion artifact reduction using conditional diffusion probabilistic model” (MAR-CDPM). The MAR-CDPM aimed to remove motion artifacts from multicenter three-dimensional contrast-enhanced T1 magnetization-prepared rapid acquisition gradient echo (3D ceT1 MPRAGE) brain dataset with different brain tumor types. Materials and methods: This study employed two publicly accessible MRI datasets: one containing 3D ceT1 MPRAGE and 2D T2-fluid attenuated inversion recovery (FLAIR) images from 230 patients with diverse brain tumors, and the other comprising 3D T1-weighted (T1W) MRI images of 148 healthy volunteers, which included real motion artifacts. The former was used to train and evaluate the model using the in silico data, and the latter was used to evaluate the model performance to remove real motion artifacts. A motion simulation was performed in k-space domain to generate an in silico dataset with minor, moderate, and heavy distortion levels. The diffusion process of the MAR-CDPM was then implemented in k-space to convert structure data into Gaussian noise by gradually increasing motion artifact levels. A conditional network with a Unet backbone was trained to reverse the diffusion process to convert the distorted images to structured data. The MAR-CDPM was trained in two scenarios: one conditioning on the time step (Formula presented.) of the diffusion process, and the other conditioning on both (Formula presented.) and T2-FLAIR images. The MAR-CDPM was quantitatively and qualitatively compared with supervised Unet, Unet conditioned on T2-FLAIR, CycleGAN, Pix2pix, and Pix2pix conditioned on T2-FLAIR models. To quantify the spatial distortions and the level of remaining motion artifacts after applying the models, quantitative metrics were reported including normalized mean squared error (NMSE), structural similarity index (SSIM), multiscale structural similarity index (MS-SSIM), peak signal-to-noise ratio (PSNR), visual information fidelity (VIF), and multiscale gradient magnitude similarity deviation (MS-GMSD). Tukey's Honestly Significant Difference multiple comparison test was employed to quantify the difference between the models where p-value (Formula presented.) was considered statistically significant. Results: Qualitatively, MAR-CDPM outperformed these methods in preserving soft-tissue contrast and different brain regions. It also successfully preserved tumor boundaries for heavy motion artifacts, like the supervised method. Our MAR-CDPM recovered motion-free in silico images with the highest PSNR and VIF for all distortion levels where the differences were statistically significant (p-values (Formula presented.)). In addition, our method conditioned on t and T2-FLAIR outperformed (p-values (Formula presented.)) other methods to remove motion artifacts from the in silico dataset in terms of NMSE, MS-SSIM, SSIM, and MS-GMSD. Moreover, our method conditioned on only t outperformed generative models (p-values (Formula presented.)) and had comparable performances compared with the supervised model (p-values (Formula presented.)) to remove real motion artifacts. Conclusions: The MAR-CDPM could successfully remove motion artifacts from 3D ceT1 MPRAGE. It is particularly beneficial for elderly who may experience involuntary movements during high-resolution MRI imaging with long acquisition times.},
+	author = {Mojtaba Safari and Xiaofeng Yang and Ali Fatemi and Louis Archambault},
+	doi = {10.1002/mp.16844},
+	issn = {24734209},
+	issue = {4},
+	journal = {Medical Physics},
+	keywords = {anatomical MRI,deep learning,k-space,motion artifact simulation,post-processing},
+	month = {4},
+	pages = {2598-2610},
+	pmid = {38009583},
+	publisher = {John Wiley and Sons Ltd},
+	title = {MRI motion artifact reduction using a conditional diffusion probabilistic model (MAR-CDPM)},
+	volume = {51},
+	year = {2024}
+}
 
-@article{Newton1687,
-  author={I. {Newton}},
-  journal={Philosophiæ Naturalis Principia Mathematica},
-  title={Axioms or Laws of Motion},
-  year={1687}}
+@misc{Liu2018,
+	abstract = {Deep learning provides exciting solutions in many fields, such as image analysis, natural language processing, and expert system, and is seen as a key method for various future applications. On account of its non-invasive and good soft tissue contrast, in recent years, Magnetic Resonance Imaging (MRI) has been attracting increasing attention. With the development of deep learning, many innovative deep learning methods have been proposed to improve MRI image processing and analysis performance. The purpose of this article is to provide a comprehensive overview of deep learning-based MRI image processing and analysis. First, a brief introduction of deep learning and imaging modalities of MRI images is given. Then, common deep learning architectures are introduced. Next, deep learning applications of MRI images, such as image detection, image registration, image segmentation, and image classification are discussed. Subsequently, the advantages and weaknesses of several common tools are discussed, and several deep learning tools in the applications of MRI images are presented. Finally, an objective assessment of deep learning in MRI applications is presented, and future developments and trends with regard to deep learning for MRI images are addressed.},
+	author = {Jin Liu and Yi Pan and Min Li and Ziyue Chen and Lu Tang and Chengqian Lu and Jianxin Wang},
+	doi = {10.26599/BDMA.2018.9020001},
+	issn = {20960654},
+	issue = {1},
+	journal = {Big Data Mining and Analytics},
+	keywords = {Deep learning,Image classification,Image detection,Image registration,Image segmentation,Magnetic resonance imaging},
+	month = {3},
+	pages = {1-18},
+	publisher = {Tsinghua University Press},
+	title = {Applications of deep learning to MRI Images: A survey},
+	volume = {1},
+	year = {2018}
+}
 
-@misc{DiscoverySpaceShuttle,
-  title={Pesawat Ruang Angkasa Discovery},
-  year=2021,
-  url={https://airandspace.si.edu/explore-and-learn/topics/discovery/about.cfm},
-  urldate={2021-02-03}}
+@article{Zhuge2017,
+	abstract = {Purpose: Gliomas are rapidly progressive, neurologically devastating, largely fatal brain tumors. Magnetic resonance imaging (MRI) is a widely used technique employed in the diagnosis and management of gliomas in clinical practice. MRI is also the standard imaging modality used to delineate the brain tumor target as part of treatment planning for the administration of radiation therapy. Despite more than 20 yr of research and development, computational brain tumor segmentation in MRI images remains a challenging task. We are presenting a novel method of automatic image segmentation based on holistically nested neural networks that could be employed for brain tumor segmentation of MRI images. Methods: Two preprocessing techniques were applied to MRI images. The N4ITK method was employed for correction of bias field distortion. A novel landmark-based intensity normalization method was developed so that tissue types have a similar intensity scale in images of different subjects for the same MRI protocol. The holistically nested neural networks (HNN), which extend from the convolutional neural networks (CNN) with a deep supervision through an additional weighted-fusion output layer, was trained to learn the multiscale and multilevel hierarchical appearance representation of the brain tumor in MRI images and was subsequently applied to produce a prediction map of the brain tumor on test images. Finally, the brain tumor was obtained through an optimum thresholding on the prediction map. Results: The proposed method was evaluated on both the Multimodal Brain Tumor Image Segmentation (BRATS) Benchmark 2013 training datasets, and clinical data from our institute. A dice similarity coefficient (DSC) and sensitivity of 0.78 and 0.81 were achieved on 20 BRATS 2013 training datasets with high-grade gliomas (HGG), based on a two-fold cross-validation. The HNN model built on the BRATS 2013 training data was applied to ten clinical datasets with HGG from a locally developed database. DSC and sensitivity of 0.83 and 0.85 were achieved. A quantitative comparison indicated that the proposed method outperforms the popular fully convolutional network (FCN) method. In terms of efficiency, the proposed method took around 10 h for training with 50,000 iterations, and approximately 30 s for testing of a typical MRI image in the BRATS 2013 dataset with a size of 160 × 216 × 176, using a DELL PRECISION workstation T7400, with an NVIDIA Tesla K20c GPU. Conclusions: An effective brain tumor segmentation method for MRI images based on a HNN has been developed. The high level of accuracy and efficiency make this method practical in brain tumor segmentation. It may play a crucial role in both brain tumor diagnostic analysis and in the treatment planning of radiation therapy.},
+	author = {Ying Zhuge and Andra V. Krauze and Holly Ning and Jason Y. Cheng and Barbara C. Arora and Kevin Camphausen and Robert W. Miller},
+	doi = {10.1002/mp.12481},
+	issn = {24734209},
+	issue = {10},
+	journal = {Medical Physics},
+	keywords = {MRI image,brain tumor,convolutional neural networks,holistically nested neural networks,image segmentation},
+	month = {10},
+	pages = {5234-5243},
+	pmid = {28736864},
+	publisher = {John Wiley and Sons Ltd},
+	title = {Brain tumor segmentation using holistically nested neural networks in MRI images},
+	volume = {44},
+	year = {2017}
+}
+
+@article{Assam2021,
+	abstract = {The unprecedented improvements in computing capabilities and the introduction of advanced techniques for the analysis, interpretation, processing, and visualization of images have greatly diversified the domain of medical sciences and resulted in the field of medical imaging. The Magnetic Resonance Imaging (MRI), an advanced imaging technique, is capable of producing high quality images of the human body including the brain for diagnosis purposes. This paper proposes a simple but efficient solution for the classification of MRI brain images into normal, and abnormal images containing disorders and injuries. It uses images with brain tumor, acute stroke and alzheimer, besides normal images, from the public dataset developed by harvard medical school, for evaluation purposes. The proposed model is a four step process, in which the steps are named: 1). Pre-processing, 2). Features Extraction, 3). Features Reduction, and 4). Classification. Median filter, being one of the best algorithms, is used for the removal of noise such as salt and pepper, and unwanted components such as scalp and skull, in the pre-processing step. During this stage, the images are converted from gray scale to colored images for further processing. In second step, it uses Discrete Wavelet Transform (DWT) technique to extract different features from the images. In third stage, Color Moments (CMs) are used to reduce the number of features and get an optimal set of characteristics. Images with the optimal set of features are passed to different classifiers for the classification of images. The Feed Forward - ANN (FF-ANN), an individual classifier, which was given a 65\% to 35\% split ratio for training and testing, and hybrid classifiers called: Random Subspace with Random Forest (RSwithRF) and Random Subspace with Bayesian Network (RSwithBN), which used 10-Fold cross validation technique, resulted in 95.83\%, 97.14\% and 95.71\% accurate classification, in corresponding order. These promising results show that the proposed method is robust and efficient, in comparison with, existing classification methods in terms of accuracy with smaller number of optimal features.},
+	author = {Muhammad Assam and Hira Kanwal and Umar Farooq and Said Khalid Shah and Arif Mehmood and Gyu Sang Choi},
+	doi = {10.1109/ACCESS.2021.3061487},
+	issn = {21693536},
+	journal = {IEEE Access},
+	keywords = {Color moments (CMs),baysnet,discrete wavelet transforms (DWT),feed forward artificial neural network (FF-ANN),principle component analysis (PCA),random forest,random subspace},
+	pages = {33313-33322},
+	publisher = {Institute of Electrical and Electronics Engineers Inc.},
+	title = {An Efficient Classification of MRI Brain Images},
+	volume = {9},
+	year = {2021}
+}
+
+@article{Krag2025,
+	abstract = {Objectives: To assess the prevalence of motion artifacts and the factors associated with them in a cohort of suspected stroke patients, and to determine their impact on diagnostic accuracy for both AI and radiologists. Materials and methods: This retrospective cross-sectional study included brain MRI scans of consecutive adult suspected stroke patients from a non-comprehensive Danish stroke center between January and April 2020. An expert neuroradiologist identified acute ischemic, hemorrhagic, and space-occupying lesions as references. Two blinded radiology residents rated MRI image quality and motion artifacts. The diagnostic accuracy of a CE-marked deep learning tool was compared to that of radiology reports. Multivariate analysis examined associations between patient characteristics and motion artifacts. Results: 775 patients (68 years ± 16, 420 female) were included. Acute ischemic, hemorrhagic, and space-occupying lesions were found in 216 (27.9\%), 12 (1.5\%), and 20 (2.6\%). Motion artifacts were present in 57 (7.4\%). Increasing age (OR per decade, 1.60; 95\% CI: 1.26, 2.09; p < 0.001) and limb motor symptoms (OR, 2.36; 95\% CI: 1.32, 4.20; p = 0.003) were independently associated with motion artifacts in multivariate analysis. Motion artifacts significantly reduced the accuracy of detecting hemorrhage. This reduction was greater for the AI tool (from 88 to 67\%; p < 0.001) than for radiology reports (from 100 to 93\%; p < 0.001). Ischemic and space-occupying lesion detection was not significantly affected. Conclusion: Motion artifacts are common in suspected stroke patients, particularly in the elderly and patients with motor symptoms, reducing accuracy for hemorrhage detection by both AI and radiologists. Key Points: Question Motion artifacts reduce the quality of MRI scans, but it is unclear which factors are associated with them and how they impact diagnostic accuracy. Findings Motion artifacts occurred in 7\% of suspected stroke MRI scans, associated with higher patient age and motor symptoms, lowering hemorrhage detection by AI and radiologists. Clinical relevance Motion artifacts in stroke brain MRIs significantly reduce the diagnostic accuracy of human and AI detection of intracranial hemorrhages. Elderly patients and those with motor symptoms may benefit from a greater focus on motion artifact prevention and reduction.},
+	author = {Christian Hedeager Krag and Felix Christoph Müller and Karen Lind Gandrup and Michael Brun Andersen and Jakob Møllenbach Møller and Marie Louise Liu and Anita Rud and Simon Krabbe and Lamaa Al-Farra and Mads Nielsen and Christina Kruuse and Mikael Ploug Boesen},
+	doi = {10.1007/s00330-025-11807-7},
+	issn = {14321084},
+	journal = {European Radiology},
+	keywords = {Artifacts,Artificial intelligence,Brain,Magnetic resonance imaging,Stroke},
+	publisher = {Springer Science and Business Media Deutschland GmbH},
+	title = {Motion artifacts and image quality in stroke MRI: associated factors and impact on AI and human diagnostic accuracy},
+	year = {2025}
+}
+
+@article{Vakli2023,
+	abstract = {Head motion artifacts in magnetic resonance imaging (MRI) are an important confounding factor concerning brain research as well as clinical practice. For this reason, several machine learning-based methods have been developed for the automatic quality control of structural MRI scans. Deep learning offers a promising solution to this problem, however, given its data-hungry nature and the scarcity of expert-annotated datasets, its advantage over traditional machine learning methods in identifying motion-corrupted brain scans is yet to be determined. In the present study, we investigated the relative advantage of the two methods in structural MRI quality control. To this end, we collected publicly available T1-weighted images and scanned subjects in our own lab under conventional and active head motion conditions. The quality of the images was rated by a team of radiologists from the point of view of clinical diagnostic use. We present a relatively simple, lightweight 3D convolutional neural network trained in an end-to-end manner that achieved a test set (N = 411) balanced accuracy of 94.41\% in classifying brain scans into clinically usable or unusable categories. A support vector machine trained on image quality metrics achieved a balanced accuracy of 88.44\% on the same test set. Statistical comparison of the two models yielded no significant difference in terms of confusion matrices, error rates, or receiver operating characteristic curves. Our results suggest that these machine learning methods are similarly effective in identifying severe motion artifacts in brain MRI scans, and underline the efficacy of end-to-end deep learning-based systems in brain MRI quality control, allowing the rapid evaluation of diagnostic utility without the need for elaborate image pre-processing.},
+	author = {Pál Vakli and Béla Weiss and János Szalma and Péter Barsi and István Gyuricza and Péter Kemenczky and Eszter Somogyi and Ádám Nárai and Viktor Gál and Petra Hermann and Zoltán Vidnyánszky},
+	doi = {10.1016/j.media.2023.102850},
+	issn = {13618423},
+	journal = {Medical Image Analysis},
+	keywords = {Convolutional neural networks,Head motion,Image quality metrics,MRI artifacts,Support vector machine},
+	month = {8},
+	pmid = {37263108},
+	publisher = {Elsevier B.V.},
+	title = {Automatic brain MRI motion artifact detection based on end-to-end deep learning is similarly effective as traditional machine learning trained on image quality metrics},
+	volume = {88},
+	year = {2023}
+}
+
+@article{Roecher2024,
+	abstract = {Quality assessment (QA) of magnetic resonance imaging (MRI) encompasses several factors such as noise, contrast, homogeneity, and imaging artifacts. Quality evaluation is often not standardized and relies on the expertise, and vigilance of the personnel, posing limitations especially with large datasets. Machine learning based on convolutional neural networks (CNNs) is a promising approach to address these challenges by performing automated inspection of MR images. In this study, a CNN for the detection of random head motion artifacts (RHM) in T1-weighted MRI as one aspect of image quality is proposed. A two-step approach aimed to ¯rst identify images exhibiting pronounced motion artifacts, and second to evaluate the feasibility of a more detailed three-class classi¯cation. The utilized dataset consisted of 420 T1-weighted whole-brain image volumes with isotropic resolution. Human experts assigned each volume to one of three classes of artifact prominence. Results demonstrate an accuracy of 95\% for the identi¯cation of images with pronounced artifact load. The addition of an intermediate class retained an accuracy of 76\%. The ¯ndings highlight the potential of CNN-based approaches to increase the e±ciency of post-hoc QAs in large datasets by °agging images with potentially relevant artifact loads for closer inspection.},
+	author = {Erik Roecher and Lucas Mösch and Jana Zweerings and Frank O. Thiele and Svenja Caspers and Arnim Johannes Gaebler and Patrick Eisner and Pegah Sarkheil and Klaus Mathiak},
+	doi = {10.1142/S0129065724500527},
+	issn = {17936462},
+	issue = {10},
+	journal = {International Journal of Neural Systems},
+	keywords = {CNN,DNN,Structural MRI,clinical image acquisition,motion artifacts,quality assessment},
+	month = {10},
+	publisher = {World Scientific},
+	title = {Motion Artifact Detection for T1-Weighted Brain MR Images Using Convolutional Neural Networks},
+	volume = {34},
+	year = {2024}
+}
+
+@article{Jimeno2024,
+	abstract = {Quality assessment, including inspecting the images for artifacts, is a critical step during MRI data acquisition to ensure data quality and downstream analysis or interpretation success. This study demonstrates a deep learning model to detect rigid motion in T1-weighted brain images. We leveraged a 2D CNN for three-class classification and tested it on publicly available retrospective and prospective datasets. Grad-CAM heatmaps enabled the identification of failure modes and provided an interpretation of the model's results. The model achieved average precision and recall metrics of 85\% and 80\% on six motion-simulated retrospective datasets. Additionally, the model's classifications on the prospective dataset showed a strong inverse correlation (-0.84) compared to average edge strength, an image quality metric indicative of motion. This model is part of the ArtifactID tool, aimed at inline automatic detection of Gibbs ringing, wrap-around, and motion artifacts. This tool automates part of the time-consuming QA process and augments expertise on-site, particularly relevant in low-resource settings where local MR knowledge is scarce.},
+	author = {Marina Manso Jimeno and Keerthi Sravan Ravi and Maggie Fung and John Thomas Vaughan and Sairam Geethanath},
+	month = {2},
+	title = {Automated detection of motion artifacts in brain MR images using deep learning and explainable artificial intelligence},
+	url = {http://arxiv.org/abs/2402.08749},
+	year = {2024}
+}
+
+@article{Al-masni2022,
+	abstract = {Magnetic Resonance Imaging (MRI) is sensitive to motion caused by patient movement due to the relatively long data acquisition time. This could cause severe degradation of image quality and therefore affect the overall diagnosis. In this paper, we develop an efficient retrospective 2D deep learning method called stacked U-Nets with self-assisted priors to address the problem of rigid motion artifacts in 3D brain MRI. The proposed work exploits the usage of additional knowledge priors from the corrupted images themselves without the need for additional contrast data. The proposed network learns the missed structural details through sharing auxiliary information from the contiguous slices of the same distorted subject. We further design a refinement stacked U-Nets that facilitates preserving the spatial image details and improves the pixel-to-pixel dependency. To perform network training, simulation of MRI motion artifacts is inevitable. The proposed network is optimized by minimizing the loss of structural similarity (SSIM) using the synthesized motion-corrupted images from 83 real motion-free subjects. We present an intensive analysis using various types of image priors: the proposed self-assisted priors and priors from other image contrast of the same subject. The experimental analysis proves the effectiveness and feasibility of our self-assisted priors since it does not require any further data scans. The overall image quality of the motion-corrected images via the proposed motion correction network significantly improves SSIM from 71.66\% to 95.03\% and declines the mean square error from 99.25 to 29.76. These results indicate the high similarity of the brain's anatomical structure in the corrected images compared to the motion-free data. The motion-corrected results of both the simulated and real motion data showed the potential of the proposed motion correction network to be feasible and applicable in clinical practices.},
+	author = {Mohammed A. Al-masni and Seul Lee and Jaeuk Yi and Sewook Kim and Sung Min Gho and Young Hun Choi and Dong Hyun Kim},
+	doi = {10.1016/j.neuroimage.2022.119411},
+	issn = {10959572},
+	journal = {NeuroImage},
+	keywords = {Deep learning,MRI,Motion artifact correction,Prior-assisted,Stacked U-Nets},
+	month = {10},
+	pmid = {35753594},
+	publisher = {Academic Press Inc.},
+	title = {Stacked U-Nets with self-assisted priors towards robust correction of rigid motion artifact in brain MRI},
+	volume = {259},
+	year = {2022}
+}
+
+@article{Sommer2020,
+	abstract = {Background and Purpose: Motion artifacts are a frequent source of image degradation in the clinical application of MR imaging (MRI). Here we implement and validate an MRI motion-artifact correction method using a multiscale fully convolutional neural network. Materials and Methods: The network was trained to identify motion artifacts in axial T2-weighted spin-echo images of the brain. Using an extensive data augmentation scheme and a motion artifact simulation pipeline, we created a synthetic training dataset of 93,600 images based on only 16 artifact-free clinical MRI cases. A blinded reader study using a unique test dataset of 28 additional clinical MRI cases with real patient motion was conducted to evaluate the performance of the network. Results: Application of the network resulted in notably improved image quality without the loss of morphologic information. For synthetic test data, the average reduction in mean squared error was 41.84\%. The blinded reader study on the real-world test data resulted in significant reduction in mean artifact scores across all cases (P<.03). Conclusions: Retrospective correction of motion artifacts using a multiscale fully convolutional network is promising and may mitigate the substantial motion-related problems in the clinical MRI workflow.},
+	author = {K. Sommer and A. Saalbach and T. Brosch and C. Hall and N. M. Cross and J. B. Andre},
+	doi = {10.3174/ajnr.A6436},
+	issn = {1936959X},
+	issue = {3},
+	journal = {American Journal of Neuroradiology},
+	month = {3},
+	pages = {416-423},
+	pmid = {32054615},
+	publisher = {American Society of Neuroradiology},
+	title = {Correction of motion artifacts using a multiscale fully convolutional neural network},
+	volume = {41},
+	year = {2020}
+}
+
+@article{Nayak2022,
+	author = {Krishna S. Nayak and Yongwan Lim and Adrienne E. Campbell‐Washburn and Jennifer Steeden},
+	doi = {10.1002/jmri.27411},
+	issn = {1053-1807},
+	issue = {1},
+	journal = {Journal of Magnetic Resonance Imaging},
+	month = {1},
+	pages = {81-99},
+	title = {Real‐Time Magnetic Resonance Imaging},
+	volume = {55},
+	year = {2022}
+}
+
+@article{Huo2025,
+	abstract = {Magnetic Resonance Imaging (MRI) is a sophisticated medical imaging technique predominantly used in medical diagnostics and research. It leverages the unique properties of atomic nuclei under magnetic fields and radio waves to create high-detail, high-contrast 3D images, providing doctors with unparalleled views of the body's interior. This article aims to explore the application scope and optimization strategies of MRI, in order to provide more accurate and reliable imaging support for medical diagnosis. Through reasonable image optimization and parameter adjustment, such as adjusting magnetic field strength, selecting appropriate pulse sequences, etc., image quality can be further improved, artifacts and noise can be reduced, thereby enhancing diagnostic accuracy. MRI is of paramount importance in neurology, cardiology, and orthopedics, as it aids in diagnosing tumors, vascular issues, and joint injuries. By optimizing image quality through adjustments to magnetic field strengths and pulse sequences, diagnostic precision can be significantly enhanced. This exploration highlights MRI's broad applicability and the strategies employed to refine its output, ensuring more reliable imaging support for accurate medical diagnoses.},
+	author = {Yongzhen Huo},
+	doi = {10.54254/2753-8818/80/2025.GL21011},
+	keywords = {Diagnostic precision,High-detail 3D images,MRI,Medical diagnostics,Medical imaging},
+	title = {Magnetic Resonance Imaging Applications and Optimization Analysis},
+	year = {2025}
+}
+
+@article{Thomas2023,
+	abstract = {Myocardial inflammation occurs following activation of the cardiac immune system, producing characteristic changes in the myocardial tissue. Cardiovascular magnetic resonance is the non-invasive imaging gold standard for myocardial tissue characterization, and is able to detect image signal changes that may occur resulting from inflammation, including edema, hyperemia, capillary leak, necrosis, and fibrosis. Conventional cardiovascular magnetic resonance for the detection of myocardial inflammation and its sequela include T2-weighted imaging, parametric T1- and T2-mapping, and gadolinium-based contrast-enhanced imaging. Emerging techniques seek to image several parameters simultaneously for myocardial tissue characterization, and to depict subtle immune-mediated changes, such as immune cell activity in the myocardium and cardiac cell metabolism. This review article outlines the underlying principles of current and emerging cardiovascular magnetic resonance methods for imaging myocardial inflammation.},
+	author = {Katharine E. Thomas and Anastasia Fotaki and René M. Botnar and Vanessa M. Ferreira},
+	doi = {10.1161/CIRCIMAGING.122.014068},
+	issn = {19420080},
+	issue = {1},
+	journal = {Circulation: Cardiovascular Imaging},
+	keywords = {cardiac imaging techniques,immune system,inflammation,magnetic resonance imaging},
+	month = {1},
+	pages = {E014068},
+	pmid = {36649450},
+	publisher = {Lippincott Williams and Wilkins},
+	title = {Imaging Methods: Magnetic Resonance Imaging},
+	volume = {16},
+	year = {2023}
+}
+
+@article{Hori2021,
+	abstract = {Low-field magnetic resonance imaging (MRI) systems have seen a renaissance recently due to improvements in technology (both hardware and software). Originally, the performance of low-field MRI systems was rated lower than their actual clinical usefulness, and they were viewed as low-cost but poorly performing systems. However, various applications similar to high-field MRI systems (1.5 T and 3 T) have gradually become possible, culminating with high-performance low-field MRI systems and their adaptations now being proposed that have unique advantages over high-field MRI systems in various aspects. This review article describes the physical characteristics of low-field MRI systems and presents both their advantages and disadvantages for clinical use (past to present), along with their cutting-edge clinical applications.},
+	author = {Masaaki Hori and Akifumi Hagiwara and Masami Goto and Akihiko Wada and Shigeki Aoki},
+	doi = {10.1097/RLI.0000000000000810},
+	issn = {1536-0210},
+	issue = {11},
+	journal = {Investigative Radiology},
+	keywords = {clinical applications,low-field MRI,magnetic resonance imaging},
+	month = {11},
+	pages = {669-679},
+	pmid = {34292257},
+	publisher = {Lippincott Williams and Wilkins},
+	title = {Low-Field Magnetic Resonance Imaging},
+	volume = {56},
+	url = {https://journals.lww.com/10.1097/RLI.0000000000000810},
+	year = {2021}
+}
+
+@article{Liu2020,
+	abstract = {Objective: Magnetic resonance imaging (MRI) acquisition is inherently sensitive to motion, and motion artifact reduction is essential for improving image quality in MRI. Methods: We developed a deep residual network with densely connected multi-resolution blocks (DRN-DCMB) model to reduce the motion artifacts in T1 weighted (T1W) spin echo images acquired on different imaging planes before and after contrast injection. The DRN-DCMB network consisted of multiple multi-resolution blocks connected with dense connections in a feedforward manner. A single residual unit was used to connect the input and output of the entire network with one shortcut connection to predict a residual image (i.e. artifact image). The model was trained with five motion-free T1W image stacks (pre-contrast axial and sagittal, and post-contrast axial, coronal, and sagittal images) with simulated motion artifacts. Results: In other 86 testing image stacks with simulated artifacts, our DRN-DCMB model outperformed other state-of-the-art deep learning models with significantly higher structural similarity index (SSIM) and improvement in signal-to-noise ratio (ISNR). The DRN-DCMB model was also applied to 121 testing image stacks appeared with various degrees of real motion artifacts. The acquired images and processed images by the DRN-DCMB model were randomly mixed, and image quality was blindly evaluated by a neuroradiologist. The DRN-DCMB model significantly improved the overall image quality, reduced the severity of the motion artifacts, and improved the image sharpness, while kept the image contrast. Conclusion: Our DRN-DCMB model provided an effective method for reducing motion artifacts and improving the overall clinical image quality of brain MRI.},
+	author = {Junchi Liu and Mehmet Kocak and Mark Supanich and Jie Deng},
+	doi = {10.1016/j.mri.2020.05.002},
+	issn = {18735894},
+	journal = {Magnetic Resonance Imaging},
+	keywords = {Deep leaning,Dense connection,MRI,Motion artifact,Multi-resolution block,Residual learning},
+	month = {9},
+	pages = {69-79},
+	pmid = {32428549},
+	publisher = {Elsevier Inc.},
+	title = {Motion artifacts reduction in brain MRI by means of a deep residual network with densely connected multi-resolution blocks (DRN-DCMB)},
+	volume = {71},
+	year = {2020}
+}
+
+@article{Gao2021,
+	abstract = {Representing features at multiple scales is of great importance for numerous vision tasks. Recent advances in backbone convolutional neural networks (CNNs) continually demonstrate stronger multi-scale representation ability, leading to consistent performance gains on a wide range of applications. However, most existing methods represent the multi-scale features in a layer-wise manner. In this paper, we propose a novel building block for CNNs, namely Res2Net, by constructing hierarchical residual-like connections within one single residual block. The Res2Net represents multi-scale features at a granular level and increases the range of receptive fields for each network layer. The proposed Res2Net block can be plugged into the state-of-the-art backbone CNN models, e.g., ResNet, ResNeXt, and DLA. We evaluate the Res2Net block on all these models and demonstrate consistent performance gains over baseline models on widely-used datasets, e.g., CIFAR-100 and ImageNet. Further ablation studies and experimental results on representative computer vision tasks, i.e., object detection, class activation mapping, and salient object detection, further verify the superiority of the Res2Net over the state-of-the-art baseline methods. The source code and trained models are available on https://mmcheng.net/res2net/.},
+	author = {Shang Hua Gao and Ming Ming Cheng and Kai Zhao and Xin Yu Zhang and Ming Hsuan Yang and Philip Torr},
+	doi = {10.1109/TPAMI.2019.2938758},
+	issn = {19393539},
+	issue = {2},
+	journal = {IEEE transactions on pattern analysis and machine intelligence},
+	month = {2},
+	pages = {652-662},
+	pmid = {31484108},
+	publisher = {NLM (Medline)},
+	title = {Res2Net: A New Multi-Scale Backbone Architecture},
+	volume = {43},
+	year = {2021}
+}
+
+@article{He2015,
+	abstract = {Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.},
+	author = {Kaiming He and Xiangyu Zhang and Shaoqing Ren and Jian Sun},
+	month = {12},
+	title = {Deep Residual Learning for Image Recognition},
+	url = {http://arxiv.org/abs/1512.03385},
+	year = {2015}
+}
+
+@article{Xu2023,
+	abstract = {Background and objective: Deep learning, a novel approach and subset of machine learning, has drawn a growing amount of attention from computer vision researchers in recent years. This method has drawn a lot of interest because of its extraordinary ability to interpret medical pictures, especially when combined with residual neural networks, which have helped to progress the field. Methods: In this paper, the following research is carried out on the residual network. First, the research status of ResNet in the medical field is introduced. The fundamental idea behind the residual neural network is then explained, along with the residual unit, its many structures, and the network architecture. Second, four aspects of the widespread use of residual neural networks in medical image processing are discussed: lung tumor, diagnosis of skin diseases, diagnosis of breast diseases, and diagnosis of diseases of the brain. Finally, the main issues and ResNet's future development in the area of processing medical images are discussed. Results: In the area of medical graph processing, residual neural networks have made strides and have had success in the clinical auxiliary diagnosis of serious illnesses such as lung tumors, breast cancer, skin conditions, and cardiovascular and cerebrovascular diseases. Conclusion: We thoroughly sorted out the most recent developments in residual neural network research and their use in medical image processing, which serves as a crucial point of reference for this field of study. It offers a helpful reference for further promoting the application and research of the ResNet model in the field of medical image processing by summarising the application status and issues of the ResNet model in the field of medical image processing and putting forwards some future development directions.},
+	author = {Wanni Xu and You Lei Fu and Dongmei Zhu},
+	doi = {10.1016/j.cmpb.2023.107660},
+	issn = {18727565},
+	journal = {Computer Methods and Programs in Biomedicine},
+	keywords = {Disease diagnosis,Medical image,Residual connection,Residual neural network (ResNet),Residual units},
+	month = {10},
+	pmid = {37320940},
+	publisher = {Elsevier Ireland Ltd},
+	title = {ResNet and its application to medical image processing: Research progress and challenges},
+	volume = {240},
+	year = {2023}
+}
+

@@ -4,6 +4,9 @@
 % Pengaturan ukuran halaman dan margin
 \usepackage[a5paper,top=25mm,left=25mm,right=20mm,bottom=25mm]{geometry}
 
+% Mnecegah meregangkan paragraf untuk meratakan bawah halaman
+\raggedbottom
+
 % Pengaturan ukuran spasi
 \usepackage[singlespacing]{setspace}
 
@@ -24,6 +27,9 @@
 % Prevent table overflow
 \usepackage{tabularx}
 
+% Pengaturan gambar 
+\usepackage{float}
+
 % Judul dokumen
 \title{Buku Laporan Kerja Praktik ITS}
 \author{Alief Gilang Permana Putra}
@@ -33,6 +39,8 @@
 
 % Pengaturan jenis karakter
 \usepackage[utf8]{inputenc}
+
+\usepackage[final]{microtype}
 
 % Pengaturan ukuran indentasi paragraf
 \setlength{\parindent}{2em}
@@ -47,7 +55,7 @@
 \usepackage{graphicx} % Input gambar
 \usepackage{longtable} % Pembuatan tabel
 \usepackage[table,xcdraw]{xcolor} % Pewarnaan tabel
-\usepackage[numbers]{natbib} % Kutipan artikel menggunakan angka
+\usepackage[numbers, sort&compress, square]{natbib} % Kutipan artikel menggunakan angka
 %\usepackage{natbib} % Kutipan artikel
 \usepackage{eso-pic} % Pembuatan background
 \usepackage{changepage} % Pembuatan teks kolom
@@ -89,7 +97,7 @@
 \titleformat{\subsection}{\bfseries\large}{\MakeUppercase{\thesubsection}}{1ex}{}
 \titleformat{\subsubsection}{\bfseries\large}{\MakeUppercase{\thesubsubsection}}{1ex}{}
 \titlespacing{\chapter}{0ex}{0ex}{2ex}
-\titlespacing{\section}{0ex}{2ex}{1ex}
+\titlespacing{\section}{0ex}{1ex}{1ex}
 \titlespacing{\subsection}{0ex}{1ex}{0.5ex}
 \titlespacing{\subsubsection}{0ex}{1ex}{0.5ex}
 
@@ -121,6 +129,10 @@
 }
 \lstset{style=codestyle}
 
+% Mengganti figure dan table menjadi gambar dan tabel
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\tablename}{Tabel}
+\renewcommand{\lstlistingname}{Kode}
 % Isi keseluruhan dokumen
 \begin{document}
   % Gunakan font Times New Roman
@@ -167,6 +179,12 @@
   \phantomsection
   \addcontentsline{toc}{chapter}{\listtablename}
   \listoftables
+  \cleardoublepage
+  
+  % Daftar kode
+  \renewcommand*\lstlistlistingname{DAFTAR KODE}
+  \lstlistoflistings
+  \addcontentsline{toc}{chapter}{\lstlistlistingname}
   \cleardoublepage
   
   % Lembar pengesahaan untuk departemen
@@ -222,6 +240,6 @@
   % Biodata penulis
   \phantomsection
   \input{lainnya/biodata-penulis.tex}
-  \cleardoublepage
+
 
 \end{document}

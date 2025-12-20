@@ -5,106 +5,118 @@
 
 \section{Latar Belakang}
 
-Pesatnya perkembangan roket yang merupakan \lipsum[1][1-15]
+\textit{Magnetic Resonance Imaging} (MRI) merupakan salah satu teknologi pencitraan medis non invasif yang digunakan untuk melakukan visualisasi struktur otak secara detail dengan kemampuan yang dapat menghasilkan kontras jaringan lunak yang tinggi dan resolusi spasial yang baik \citep{Safari2024}. Citra MRI otak digunakan secara luas dalam diagnosis, penelitian neurologi, dan pengembangan sistem berbasis \textit{Artificial Intelligence} (AI) seperti deteksi, segmentasi, klasifikasi, dan \textit{image captioning} \citep{Liu2018}. MRI juga digunakan untuk menghasilkan citra dengan resolusi tinggi yang mendukung diagnosis penyakit otak seperti tumor dan stroke serta membantu dalam perencanaan terapi \citep{Zhuge2017,Assam2021}. 
 
-\lipsum[2][1-10]
+Salah satu tantangan utama dalam akuisisi citra MRI adalah munculnya artefak terutama akibat pergerakan pasien selama proses pemindaian yang memakan waktu lama. Artefak ini dapat menurunkan kualitas citra, mengganggu analisis lanjutan, bahkan menyebabkan salah diagnosis atau perlunya pengulangan pemindaian \citep{Safari2024}. Artefak juga berdampak signifikan pada akurasi diagnostik manusia maupun sistem berbasis AI \citep{Krag2025}. Artefak pada MRI otak dapat diklasifikasikan berdasarkan sumber dan bentuknya. Salah satu jenis yang paling umum adalah \textit{motion artifact}, yang dapat berupa translasi (gerakan vertikal/horizontal) dan rotasi kepala \citep{Vakli2023, Roecher2024}. Klasifikasi jenis dan tingkat keparahan artefak merupakan hal penting untuk menentukan strategi koreksi yang tepat \citep{Jimeno2024}.
+ 
+Berbagai pendekatan telah dikembangkan untuk memperbaiki artefak pada citra MRI, mulai dari metode konvensional hingga \textit{deep learning}. Model \textit{deep learning} seperti U-Net, \textit{stacked} U-Net, dan deep residual network telah terbukti efektif dalam mengurangi artefak gerak dan meningkatkan kualitas citra \citep{Al-masni2022, Sommer2020}. \textit{Generative Adversarial Networks} (GAN), termasuk Pix2Pix juga digunakan untuk melakukan perbaikan citra dengan melakukan translasi gambar dengan artefak menjadi gambar bebas artefak \citep{Safari2024}. 
+ 
+Kerja praktik ini mengusulkan pengembangan modul klasifikasi artefak gerak/\textit{motion artifact} yang mampu membedakan jenis rotasi, translasi vertikal, dan translasi horizontal, serta modul koreksi artefak berbasis Pix2Pix GAN. Modul klasifikasi memanfaatkan arsitektur berbasis \textit{neural network} seperti ResNet dan Transformer untuk mendeteksi dan mengklasifikasikan jenis artefak. Sementara itu, Pix2Pix GAN digunakan pada modul koreksi untuk memperbaiki citra MRI yang terdistorsi akibat artefak gerak. Pendekatan ini diharapkan dapat meningkatkan \textit{robustness} sistem \textit{image captioning} terhadap artefak citra MRI, sehingga mendukung sistem \textit{fault tolerance image captioning} secara menyeluruh.
 
 \section{Rumusan Permasalahan}
 
-Masalah yang akan \lipsum[3][1-2] adalah:
+Berdasarkan latar belakang yang dipaparkan, berikut adalah rumusan masalah:
 
 \begin{enumerate}[nolistsep]
 
-  \item Bagaimana cara \lipsum[3][3-5]
+  \item Bagaimana melakukan simulasi artefak translasi dan rotasi pada citra otak?
+  
+  \item Bagaimana cara mengembangkan model berbasis \textit{neural network} untuk klasifikasi artefak translasi dan rotasi pada citra otak?  
 
-  \item \lipsum[3][6-8]
+  \item Bagaimana cara melakukan koreksi artefak translasi dan rotasi pada citra otak menggunakan \textit{Generative Adversarial Network} (GAN)? 
 
 \end{enumerate}
 
 \section{Tujuan}
 
-Tujuan dari \lipsum[4][1-3] adalah:
+Berikut adalah tujuan dari kerja praktik:
 
 \begin{enumerate}[nolistsep]
 
-  \item Membuat \lipsum[4][4-5]
-
-  \item \lipsum[4][6-9]
+  \item Melakukan simulasi artefak translasi dan rotasi pada citra otak.
+  
+  \item Mengembangkan model berbasis \textit{neural network} untuk klasifikasi artefak translasi dan rotasi pada citra otak.
+  
+  \item Melakukan koreksi artefak translasi dan rotasi pada citra otak menggunakan \textit{Generative Adversarial Network} (GAN).
 
 \end{enumerate}
 
 \section{Manfaat}
 
-Manfaat dari \lipsum[5][1-3] adalah:
+Penelitian dan pengembangan modul dalam kerja praktik ini diharapkan dapat memberikan manfaat yang signifikan, baik bagi pengembangan ilmu pengetahuan maupun implementasi praktis di bidang medis. Berikut adalah manfaat dari kerja praktik:
 
 \begin{enumerate}[nolistsep]
 
-  \item Mempermudah \lipsum[5][4-5]
-
-  \item \lipsum[5][6-10]
-
+	\item Memberikan studi komparatif mendalam tentang efektivitas berbagai arsitektur \textit{neural network} dan Transformer dalam tugas klasifikasi artefak gerak.
+	
+	\item Mengevaluasi potensi dan performa arsitektur Pix2Pix GAN untuk tugas restorasi citra medis yang spesifik.
+	
+	\item Menghasilkan purwarupa modul \textit{Quality Control} (QC) otomatis yang dapat mendeteksi citra MRI berkualitas buruk secara dini.
+	
+	\item Menyediakan komponen dasar untuk sistem \textit{fault tolerance} guna meningkatkan keandalan sistem AI medis tingkat lanjut seperti \textit{image captioning}.
+	
 \end{enumerate}
 
 \section{Waktu dan Tempat Pelaksanaan}
 
-Kerja praktik akan dilaksanakan pada \lipsum[6][1-3]
+Kerja praktik ini dilaksanakan pada 27 Mei 2025 hingga 27 Agustus 2025 dan dikerjakan secara \textit{remote}. 
 
 \section{Metodologi Kerja Praktik}
 
-Metode yang \lipsum[7][1-5] yaitu:
+Metodologi dalam pembuatan buku kerja praktik ini meliputi:
 
 \begin{enumerate}[nolistsep]
 
   \item \textbf{Perumusan Masalah}
 
-  Pada tahap ini \lipsum[7][6-9]
+  Pada tahap ini, dilakukan identifikasi mendalam mengenai isu utama yang dihadapi, yaitu penurunan kualitas citra MRI akibat artefak gerak serta dampak negatif terhadap kinerja sistem \textit{image captioning} medis. Perumusan masalah ini bertujuan untuk mendefinisikan secara jelas ruang lingkup permasalahan yang akan diselesaikan melalui pengembangan modul klasifikasi dan koreksi citra.
 
   \item \textbf{Studi Literatur}
 
-  Pada tahap ini \lipsum[7][10-13]
+  Tahap studi literatur dilakukan dengan mengkaji berbagai referensi ilmiah untuk memahami prinsip dasar fisika MRI dan karakteristik artefak gerak. Kajian ini juga mencakup eksplorasi arsitektur \textit{deep learning} terkini yang relevan dengan tujuan penelitian, seperti Convolutional Neural Network (CNN), Transformer, dan Generative Adversarial Network (GAN) untuk menentukan metode yang paling tepat untuk diterapkan.
 
   \item \textbf{Analisis dan Perancangan Sistem}
 
-  Pada tahap ini \lipsum[8][1-2]
+  Tahap berikutnya adalah analisis dan perancangan sistem, yang dimulai dengan menganalisis karakteristik dataset BraTS dan menentukan kebutuhan praproses data yang diperlukan. Pada tahap ini, dirancang algoritma simulasi artefak yang berbasis pada manipulasi domain frekuensi (\textit{k-space}) untuk menghasilkan data latih yang realistis. Selain itu, arsitektur model klasifikasi dirancang dengan memanfaatkan strategi \textit{transfer learning}, sedangkan model koreksi dirancang menggunakan arsitektur GAN Pix2Pix untuk restorasi citra.
 
   \item \textbf{Implementasi Sistem}
 
-  Pada tahap ini \lipsum[8][3-6]
+  Setelah perancangan selesai, dilakukan implementasi sistem. Modul pra-pemrosesan dan simulasi artefak diimplementasikan menggunakan bahasa pemrograman Python. Proses pelatihan kemudian dilakukan untuk model-model klasifikasi, yaitu ResNet50, DenseNet121, EfficientNetB0, ViT, dan SwinV2 menggunakan dataset yang telah disimulasikan. Selain itu, model koreksi Pix2Pix GAN dilatih untuk mempelajari pemetaan dari citra dengan artefak menjadi citra bersih, sehingga mampu memperbaiki kualitas citra yang terdegradasi.
 
   \item \textbf{Pengujian dan Evaluasi}
 
-  Pada tahap ini \lipsum[8][7-12]
+  Tahap terakhir adalah pengujian dan evaluasi untuk mengukur kinerja sistem yang telah dibangun. Model klasifikasi diuji menggunakan metrik evaluasi standar seperti Akurasi, Presisi, \textit{Recall}, dan \textit{F1-Score} pada data uji yang terpisah. Sementara itu, efektivitas model koreksi dievaluasi secara kuantitatif menggunakan \textit{Peak Signal-to-Noise Ratio} (PSNR) dan \textit{Structural Similarity Index} (SSIM), serta dilakukan inspeksi visual untuk menilai kualitas hasil rekonstruksi citra secara kualitatif.
 
 \end{enumerate}
 
 \section{Sistematika Penulisan}
 
-Laporan kerja praktik akan terbagi menjadi \lipsum[9][1] yaitu:
+Laporan kerja praktik akan terbagi menjadi 6 bagian, yaitu:
 
 \begin{enumerate}[nolistsep]
 
   \item \textbf{Bab I Pendahuluan}
 
-  Bab ini berisi \lipsum[9][2-4]
+  Bab ini memaparkan latar belakang masalah, rumusan masalah, batasan masalah, tujuan penelitian, manfaat penelitian, metodologi yang digunakan, serta sistematika penulisan laporan.
 
   \item \textbf{Bab II Profil Perusahaan}
 
-  Bab ini berisi \lipsum[9][5-7]
+  Bab ini berisi gambaran umum Laboratorium Manajemen Cerdas Informasi (MCI) mulai dari profil dan lokasi perusahaan.
 
   \item \textbf{Bab III Tinjauan Pustaka}
 
-  Bab ini berisi \lipsum[9][8]
+  Bab ini membahas landasan teori yang relevan, mencakup prinsip dasar citra MRI, artefak gerak, serta tinjauan mendalam mengenai arsitektur \textit{neural network} dan GAN yang digunakan dalam penelitian.
 
   \item \textbf{Bab IV Desain dan Implementasi}
 
-  Bab ini berisi \lipsum[10][1-2]
+  Bab ini menjelaskan secara rinci desain sistem dan langkah-langkah implementasi. Pembahasan meliputi alur kerja simulasi data artefak, arsitektur model klasifikasi dan koreksi yang dibangun, serta konfigurasi pelatihan yang diterapkan.
 
   \item \textbf{Bab V Pengujian dan Evaluasi}
 
-  Bab ini berisi \lipsum[10][3-4]
+  Bab ini menyajikan hasil eksperimen dan pengujian sistem. Analisis mengenai perbandingan performa antar model klasifikasi serta evaluasi kualitas citra hasil koreksi GAN, baik secara visual maupun metrik kuantitatif dijelaskan secara rinci pada bagian ini.
 
   \item \textbf{Bab VI Kesimpulan dan Saran}
 
-  Bab ini berisi \lipsum[10][5-8]
+  Bab ini berisi kesimpulan dari seluruh rangkaian kerja praktik serta saran-saran untuk pengembangan sistem lebih lanjut di masa depan.
 
 \end{enumerate}
