@@ -264,3 +264,471 @@ BibTex yang digunakan pada file ini.
 	year = {2023}
 }
 
+@article{Vulli2022,
+	abstract = {Lymph node metastasis in breast cancer may be accurately predicted using a DenseNet‐ 169 model. However, the current system for identifying metastases in a lymph node is manual and tedious. A pathologist well‐versed with the process of detection and characterization of lymph nodes goes through hours investigating histological slides. Furthermore, because of the massive size of most whole‐slide images (WSI), it is wise to divide a slide into batches of small image patches and apply methods independently on each patch. The present work introduces a novel method for the automated diagnosis and detection of metastases from whole slide images using the Fast AI framework and the 1‐cycle policy. Additionally, it compares this new approach to previous meth-ods. The proposed model has surpassed other state‐of‐art methods with more than 97.4\% accuracy. In addition, a mobile application is developed for prompt and quick response. It collects user information and models to diagnose metastases present in the early stages of cancer. These results indi-cate that the suggested model may assist general practitioners in accurately analyzing breast cancer situations, hence preventing future complications and mortality. With digital image processing, histopathologic interpretation and diagnostic accuracy have improved considerably.},
+	author = {Adarsh Vulli and Parvathaneni Naga Srinivasu and Madipally Sai Krishna Sashank and Jana Shafi and Jaeyoung Choi and Muhammad Fazal Ijaz},
+	doi = {10.3390/s22082988},
+	issn = {14248220},
+	issue = {8},
+	journal = {Sensors},
+	keywords = {1‐cycle policy,DenseNet‐169,FastAI,cancer,computational histopathology,diagnostic odds ratio,lymph nodes,whole‐slide images},
+	month = {4},
+	pmid = {35458972},
+	publisher = {MDPI},
+	title = {Fine‐Tuned DenseNet‐169 for Breast Cancer Metastasis Prediction Using FastAI and 1‐Cycle Policy},
+	volume = {22},
+	year = {2022}
+}
+
+@article{Huang2020,
+	abstract = {Medical image classification plays an important role in disease diagnosis since it can provide important reference information for doctors. The supervised convolutional neural networks (CNNs) such as DenseNet provide the versatile and effective method for medical image classification tasks, but they require large amounts of data with labels and involve complex and time-consuming training process. The unsupervised CNNs such as principal component analysis network (PCANet) need no labels for training but cannot provide desirable classification accuracy. To realize the accurate medical image classification in the case of a small training dataset, we have proposed a light-weighted hybrid neural network which consists of a modified PCANet cascaded with a simplified DenseNet. The modified PCANet has two stages, in which the network produces the effective feature maps at each stage by convoluting inputs with various learned kernels. The following simplified DenseNet with a small number of weights will take all feature maps produced by the PCANet as inputs and employ the dense shortcut connections to realize accurate medical image classification. To appreciate the performance of the proposed method, some experiments have been done on mammography and osteosarcoma histology images. Experimental results show that the proposed hybrid neural network is easy to train and it outperforms such popular CNN models as PCANet, ResNet and DenseNet in terms of classification accuracy, sensitivity and specificity.},
+	author = {Zhiwen Huang and Xingxing Zhu and Mingyue Ding and Xuming Zhang},
+	doi = {10.1109/ACCESS.2020.2971225},
+	issn = {21693536},
+	journal = {IEEE Access},
+	keywords = {DenseNet,Medical image classification,PCANet,hybrid neural network},
+	pages = {24697-24712},
+	publisher = {Institute of Electrical and Electronics Engineers Inc.},
+	title = {Medical Image Classification Using a Light-Weighted Hybrid Neural Network Based on PCANet and DenseNet},
+	volume = {8},
+	year = {2020}
+}
+
+@article{Li2020,
+	abstract = {In this study, we proposed a novel convolutional neural network (CNN) architecture for classification of benign and malignant breast cancer (BC) in histological images. To improve the delivery and use of feature information, we chose the DenseNet as the basic building block and interleaved it with the squeeze-and-excitation (SENet) module. We conducted extensive experiments with the proposed framework by using the public domain BreakHis dataset and demonstrated that the proposed framework can produce significantly improved accuracy in BC classification, compared with the state-of-the-art CNN methods reported in the literature.},
+	author = {Xia Li and Xi Shen and Yongxia Zhou and Xiuhui Wang and Tie Qiang Li},
+	doi = {10.1371/journal.pone.0232127},
+	issn = {19326203},
+	issue = {5},
+	journal = {PLoS ONE},
+	month = {5},
+	pmid = {32365142},
+	publisher = {Public Library of Science},
+	title = {Classification of breast cancer histopathological images using interleaved DenseNet with SENet (IDSNet)},
+	volume = {15},
+	year = {2020}
+}
+
+@article{Davila2024,
+	abstract = {In the context of medical imaging and machine learning, one of the most pressing challenges is the effective adaptation of pre-trained models to specialized medical contexts. Despite the availability of advanced pre-trained models, their direct application to the highly specialized and diverse field of medical imaging often falls short due to the unique characteristics of medical data. This study provides a comprehensive analysis on the performance of various fine-tuning methods applied to pre-trained models across a spectrum of medical imaging domains, including X-ray, MRI, Histology, Dermoscopy, and Endoscopic surgery. We evaluated eight fine-tuning strategies, including standard techniques such as fine-tuning all layers or fine-tuning only the classifier layers, alongside methods such as gradually unfreezing layers, regularization based fine-tuning and adaptive learning rates. We selected three well-established CNN architectures (ResNet-50, DenseNet-121, and VGG-19) to cover a range of learning and feature extraction scenarios. Although our results indicate that the efficacy of these fine-tuning methods significantly varies depending on both the architecture and the medical imaging type, strategies such as combining Linear Probing with Full Fine-tuning resulted in notable improvements in over 50\% of the evaluated cases, demonstrating general effectiveness across medical domains. Moreover, Auto-RGN, which dynamically adjusts learning rates, led to performance enhancements of up to 11\% for specific modalities. Additionally, the DenseNet architecture showed more pronounced benefits from alternative fine-tuning approaches compared to traditional full fine-tuning. This work not only provides valuable insights for optimizing pre-trained models in medical image analysis but also suggests the potential for future research into more advanced architectures and fine-tuning methods.},
+	author = {Ana Davila and Jacinto Colan and Yasuhisa Hasegawa},
+	doi = {10.1016/j.imavis.2024.105012},
+	issn = {02628856},
+	journal = {Image and Vision Computing},
+	keywords = {Convolutional neural network,Fine-tuning,Image classification,Medical image analysis,Transfer learning},
+	month = {6},
+	publisher = {Elsevier Ltd},
+	title = {Comparison of fine-tuning strategies for transfer learning in medical image classification},
+	volume = {146},
+	year = {2024}
+}
+
+@article{Shahzad2025,
+	abstract = {Breast cancer is a leading killer and has been deepened by COVID-19, which affected diagnosis and treatment services. The absence of a rapid, efficient, accurate diagnostic tool remains a pressing issue for this severe disease. Thus, it is still possible to encounter issues concerning diagnostic accuracy and utilization of errors in the sphere of machine learning, deep learning, and transfer learning models. This paper presents a new model combining EfficientNetB0 and ResNet50 to improve the classification of breast histopathology images into IDC and non-IDC classes. The implementation steps, it include resizing all the images to be of a standard size of 128*128 pixels and then performing normalization to enhance the learning model. EfficientNetB0 is selected for its efficient yet effective performance while ResNet50 employs deep residual connections to overcome the vanishing gradient problem. The proposed model that incorporates some of the characteristics from both architectures turns out to be very resilient and accurate in classification. The model demonstrates superior performance with an accuracy of 94\%, a Mean Absolute Error (MAE) of 0.0628, and a Matthews Correlation Coefficient (MCC) of 0.8690. These results outperform previous baselines and show that the model performs well in achieving a good trade-off between precision and recall. The comparison with the related works demonstrates the superiority of the proposed ensemble approach in terms of accuracy and complexity, which makes it efficient for practical breast cancer diagnosis and screening.},
+	author = {Tariq Shahzad and Tehseen Mazhar and Sheikh Muhammad Saqib and Khmaies Ouahada},
+	doi = {10.1038/s41598-025-98523-w},
+	issn = {20452322},
+	issue = {1},
+	journal = {Scientific Reports},
+	keywords = {EfficientNetB0,Invasive ductal carcinoma (IDC) and Non-IDC categories,Matthews correlation coefficient (MCC),Mean absolute error (MAE),ResNet50},
+	month = {12},
+	pmid = {40251247},
+	publisher = {Nature Research},
+	title = {Transformer-inspired training principles based breast cancer prediction: combining EfficientNetB0 and ResNet50},
+	volume = {15},
+	year = {2025}
+}
+
+@article{Alshaari2025,
+	abstract = {Brain tumor classification from MRI images plays a crucial role in early diagnosis and treatment planning. While deep learning approaches have shown promise in this domain, achieving high accuracy (ACC) by maintaining model generalization across different datasets remains challenging. Existing approaches in automated brain tumor classification often struggle with feature extraction complexity and model generalization, particularly when dealing with datasets of varying sizes. Additionally, many current methods lack robust performance validation across multiple evaluation metrics. To develop and validate a transfer learning-based deep learning model for accurate multi-class brain tumor classification that demonstrates consistent performance across different dataset sizes while maintaining high classification ACC and reliability. We presented Deep-EFNet, a novel architecture based on EfficientNetB0 with transfer learning. The proposed model leverages the powerful feature extraction capabilities of EfficientNetB0 while incorporating strategic enhancements for improved performance. These enhancements include batch normalization layers for stable training, dropout and L2 regularization mechanisms for preventing overfitting, and a hierarchical dense layer structure for improved feature representation. To validate Deep-EFNet approach comprehensively, we evaluated the model on two distinct datasets containing 3,064 and 7,023 MRI images respectively, each encompassing four classes of brain tumors. The experimental evaluation of Deep-EFNet demonstrated exceptional performance across multiple metrics and datasets. The model achieved an ACC of 95\% on 3K-DS (3,064 images) and notably improved to 98\% ACC on the larger Dataset 2 (7,023 images). The reliability of these results is further validated by impressive ROC curve scores, achieving perfect 1.00 values across all classes in Dataset 2, while 3K-DS showed equally strong performance with ROC scores of 0.99 for class 0 and 1.00 for the remaining classes. Comprehensive validation through ACC, precision, recall, F1-scores, confusion matrices, and calibration curves further demonstrated the model’s robust and consistent performance across all evaluation metrics. Deep-EFNet demonstrates state-of-the-art performance in brain tumor classification, surpassing existing approaches in both ACC and reliability. The model’s consistent performance across datasets of varying sizes suggests strong generalization capabilities, making it a promising tool for clinical applications in brain tumor diagnosis.},
+	author = {Hussein Alshaari and Saeed Alqahtani},
+	doi = {10.1109/ACCESS.2025.3567919},
+	issn = {21693536},
+	journal = {IEEE Access},
+	keywords = {Brain tumor classification,EfficientNetB0,MRI image analysis,clinical neuro informatics,computer-aided diagnosis,hierarchical regularization,medical imaging,multi-class deep learning,transfer learning},
+	pages = {85682-85697},
+	publisher = {Institute of Electrical and Electronics Engineers Inc.},
+	title = {Deep-EFNet: An Optimized EfficientNetB0 Architecture With Dual Regularization for Scalable Multi-Class Brain Tumor Classification in MRI},
+	volume = {13},
+	year = {2025}
+}
+
+@article{Kumar2025,
+	abstract = {Skin diseases are increasingly prevalent, and their accurate diagnosis remains challenging due to the complexity of medical imaging and the diversity of conditions. Existing systems primarily rely on Generative Adversarial Networks (GANs) for skin disease prediction, but they face stability issues and inconsistencies during training. Additionally, the reliance on synthetic data generation often results in less accurate predictions when the generated images fail to fully capture real-world variability. To overcome these limitations, the proposed system employs EfficientNetB0, a deep learning model optimized for medical image analysis. EfficientNetB0 uses a compound scaling method to balance depth, width, and resolution, enabling efficient feature extraction while maintaining high accuracy. Its lightweight architecture allows for faster processing without compromising performance, making it ideal for skin disease classification. By leveraging EfficientNetB0, the system enhances early detection, improves diagnostic precision, and reduces misclassification risks, ultimately supporting better patient outcomes in clinical practice.},
+	author = {Dr. R. G. Suresh Kumar},
+	doi = {10.22214/ijraset.2025.70636},
+	issue = {5},
+	journal = {International Journal for Research in Applied Science and Engineering Technology},
+	month = {5},
+	pages = {2705-2715},
+	publisher = {International Journal for Research in Applied Science and Engineering Technology (IJRASET)},
+	title = {Deep Learning-Based Diagnosis for Skin Disease Prediction},
+	volume = {13},
+	year = {2025}
+}
+
+@inproceedings{Hoang2021,
+	abstract = {Convolutional neural networks (CNNs) are now used in a variety of computer vision applications. However, it is quite hard to adopt them in real-time system due to the problem of increasing model size. Recently, some efficient networks which still have acceptable performance are proposed. Among them, EfficientNet is one of the state-of-the-art architectures. It can be considered a family of network models. EfficientNet could take its place among the state-of-the-art on the ImageNet challenge while still have much fewer parameters and computation cost. But given some of its subtleties, it is more efficient than most of its predecessors. It uses the inverted bottleneck residual blocks of MobileNetV2, in addition to squeeze-and-excitation modules (SE modules). This paper investigates the effect of SE modules on the performance of EfficientNet-B0, the fundamental network model in its family, by repositioning/removing the SE modules.},
+	author = {Van Thanh Hoang and Kang Hyun Jo},
+	doi = {10.1109/HSI52170.2021.9538782},
+	isbn = {9781665441124},
+	issn = {21582254},
+	booktitle = {International Conference on Human System Interaction, HSI},
+	keywords = {SE module,efficient CNN architecture,efficientnet},
+	month = {7},
+	publisher = {IEEE Computer Society},
+	title = {Practical Analysis on Architecture of EfficientNet},
+	volume = {2021-July},
+	year = {2021}
+}
+
+@misc{Shamshad2023,
+	abstract = {Following unprecedented success on the natural language tasks, Transformers have been successfully applied to several computer vision problems, achieving state-of-the-art results and prompting researchers to reconsider the supremacy of convolutional neural networks (CNNs) as de facto operators. Capitalizing on these advances in computer vision, the medical imaging field has also witnessed growing interest for Transformers that can capture global context compared to CNNs with local receptive fields. Inspired from this transition, in this survey, we attempt to provide a comprehensive review of the applications of Transformers in medical imaging covering various aspects, ranging from recently proposed architectural designs to unsolved issues. Specifically, we survey the use of Transformers in medical image segmentation, detection, classification, restoration, synthesis, registration, clinical report generation, and other tasks. In particular, for each of these applications, we develop taxonomy, identify application-specific challenges as well as provide insights to solve them, and highlight recent trends. Further, we provide a critical discussion of the field's current state as a whole, including the identification of key challenges, open problems, and outlining promising future directions. We hope this survey will ignite further interest in the community and provide researchers with an up-to-date reference regarding applications of Transformer models in medical imaging. Finally, to cope with the rapid development in this field, we intend to regularly update the relevant latest papers and their open-source implementations at https://github.com/fahadshamshad/awesome-transformers-in-medical-imaging.},
+	author = {Fahad Shamshad and Salman Khan and Syed Waqas Zamir and Muhammad Haris Khan and Munawar Hayat and Fahad Shahbaz Khan and Huazhu Fu},
+	doi = {10.1016/j.media.2023.102802},
+	issn = {13618423},
+	journal = {Medical Image Analysis},
+	keywords = {Clinical report generation,Deep neural networks,Medical image analysis,Transformers,Vision transformers},
+	month = {8},
+	pmid = {37315483},
+	publisher = {Elsevier B.V.},
+	title = {Transformers in medical imaging: A survey},
+	volume = {88},
+	year = {2023}
+}
+
+@misc{Al-hammuri2023,
+	abstract = {The vision transformer (ViT) is a state-of-the-art architecture for image recognition tasks that plays an important role in digital health applications. Medical images account for 90\% of the data in digital medicine applications. This article discusses the core foundations of the ViT architecture and its digital health applications. These applications include image segmentation, classification, detection, prediction, reconstruction, synthesis, and telehealth such as report generation and security. This article also presents a roadmap for implementing the ViT in digital health systems and discusses its limitations and challenges.},
+	author = {Khalid Al-hammuri and Fayez Gebali and Awos Kanan and Ilamparithi Thirumarai Chelvan},
+	doi = {10.1186/s42492-023-00140-9},
+	issn = {25244442},
+	issue = {1},
+	journal = {Visual Computing for Industry, Biomedicine, and Art},
+	keywords = {Artificial intelligence,Digital health,Medical imaging,Telehealth,Vision transformer},
+	month = {12},
+	publisher = {Springer},
+	title = {Vision transformer architecture and applications in digital health: a tutorial and survey},
+	volume = {6},
+	year = {2023}
+}
+
+@misc{Xiao2023,
+	abstract = {Background and Objectives: Transformer is a model relying entirely on self-attention which has a wide range of applications in the field of natural language processing. Researchers are beginning to focus on the transformer in medical images due to the past few years having seen the rapid development of transformer in many vision fields such as vision transformer (ViT) and Swin transformer. In the last year, moreover, many scholars have applied transformer to medical image segmentation and have achieved good segmentation results. Transformer-based medical image segmentation has become one of the hot spots in this field. The purpose of this work is to categorize and review the segmentation methods of Unet-based transformer and other model based transformer in medical images. Methods: This paper summarizes the transformer-based segmentation models in the abdominal organs, heart, brain, and lung based on the relevant studies in the last two years. We described and analyzed the model structure including the position of the transformer in the model, the changes made by scholars to transformer and the combination with the model. In this work, the segmentation performance results based on Dice evaluation metrics are compared. Results: Through the help of 93 references, we find that researchers prefer to use Unet-based transformer models than others and place the transformer structure in the encoder. These new models improve the segmentation performance compared with U-Net and other segmentation models. However, there are not many related studies on lungs, which points to a new way for future research. Conclusions: We found that the combination of U-Net and transformer is more suitable for segmentation. In future research on medical image segmentation, researchers can use a suitable transformer-based segmentation method or modify the transformer structure according to the segmentation requirements. We hope that this work will be helpful for improvements of the transformer to solve clinical problems in medicine.},
+	author = {Hanguang Xiao and Li Li and Qiyuan Liu and Xiuhong Zhu and Qihang Zhang},
+	doi = {10.1016/j.bspc.2023.104791},
+	issn = {17468108},
+	journal = {Biomedical Signal Processing and Control},
+	keywords = {3D segmentation,Medical image,Segmentation analysis,Transformer},
+	month = {7},
+	publisher = {Elsevier Ltd},
+	title = {Transformers in medical image segmentation: A review},
+	volume = {84},
+	year = {2023}
+}
+
+@misc{Aburass2025,
+	abstract = {The rapid advancement of artificial intelligence techniques, particularly deep learning, has transformed medical imaging. This paper presents a comprehensive review of recent research that leverage vision transformer (ViT) models for medical image classification across various disciplines. The medical fields of focus include breast cancer, skin lesions, magnetic resonance imaging brain tumors, lung diseases, retinal and eye analysis, COVID-19, heart diseases, colon cancer, brain disorders, diabetic retinopathy, skin diseases, kidney diseases, lymph node diseases, and bone analysis. Each work is critically analyzed and interpreted with respect to its performance, data preprocessing methodologies, model architecture, transfer learning techniques, model interpretability, and identified challenges. Our findings suggest that ViT shows promising results in the medical imaging domain, often outperforming traditional convolutional neural networks (CNN). A comprehensive overview is presented in the form of figures and tables summarizing the key findings from each field. This paper provides critical insights into the current state of medical image classification using ViT and highlights potential future directions for this rapidly evolving research area.},
+	author = {Sanad Aburass and Osama Dorgham and Jamil Al Shaqsi and Maha Abu Rumman and Omar Al-Kadi},
+	doi = {10.1007/s10278-025-01481-y},
+	issn = {29482933},
+	journal = {Journal of Imaging Informatics in Medicine},
+	keywords = {Clinical decision support,Convolutional neural networks,Medical image analysis,Medical image classification,Vision transformers},
+	month = {12},
+	pmid = {40164818},
+	publisher = {Springer Nature},
+	title = {Vision Transformers in Medical Imaging: a Comprehensive Review of Advancements and Applications Across Multiple Diseases},
+	year = {2025}
+}
+
+@article{Hussain2025,
+	author = {Tahir Hussain and Hayaru Shouno and Abid Hussain and Dostdar Hussain and Muhammad Ismail and Tatheer Hussain Mir and Fang Rong Hsu and Taukir Alam and Shabnur Anonna Akhy},
+	doi = {10.1109/ACCESS.2025.3554184},
+	issn = {2169-3536},
+	journal = {IEEE Access},
+	pages = {54040-54068},
+	title = {EFFResNet-ViT: A Fusion-Based Convolutional and Vision Transformer Model for Explainable Medical Image Classification},
+	volume = {13},
+	year = {2025}
+}
+
+@article{Liu2022,
+	abstract = {Large-scale NLP models have been shown to significantly improve the performance on language tasks with no signs of saturation. They also demonstrate amazing few-shot capabilities like that of human beings. This paper aims to explore large-scale models in computer vision. We tackle three major issues in training and application of large vision models, including training instability, resolution gaps between pre-training and fine-tuning, and hunger on labelled data. Three main techniques are proposed: 1) a residual-post-norm method combined with cosine attention to improve training stability; 2) A log-spaced continuous position bias method to effectively transfer models pre-trained using low-resolution images to downstream tasks with high-resolution inputs; 3) A self-supervised pre-training method, SimMIM, to reduce the needs of vast labeled images. Through these techniques, this paper successfully trained a 3 billion-parameter Swin Transformer V2 model, which is the largest dense vision model to date, and makes it capable of training with images of up to 1,536$\times$1,536 resolution. It set new performance records on 4 representative vision tasks, including ImageNet-V2 image classification, COCO object detection, ADE20K semantic segmentation, and Kinetics-400 video action classification. Also note our training is much more efficient than that in Google's billion-level visual models, which consumes 40 times less labelled data and 40 times less training time. Code is available at \url\{https://github.com/microsoft/Swin-Transformer\}.},
+	author = {Ze Liu and Han Hu and Yutong Lin and Zhuliang Yao and Zhenda Xie and Yixuan Wei and Jia Ning and Yue Cao and Zheng Zhang and Li Dong and Furu Wei and Baining Guo},
+	month = {4},
+	title = {Swin Transformer V2: Scaling Up Capacity and Resolution},
+	url = {http://arxiv.org/abs/2111.09883},
+	year = {2022}
+}
+
+@article{Fitzgerald2024,
+	abstract = {Polyp segmentation within colonoscopy video frames using deep learning models has the potential to automate colonoscopy screening procedures. This could help improve the early lesion detection rate and in vivo characterization of polyps which could develop into colorectal cancer. Recent state-of-the-art deep learning polyp segmentation models have combined Convolutional Neural Network (CNN) architectures and Transformer Network (TN) architectures. Motivated by the aim of improving the performance of polyp segmentation models and their robustness to data variations beyond those covered during training, we propose a new CNN-TN hybrid model named the FCB-SwinV2 Transformer. This model was created by making extensive modifications to the recent state-of-the-art FCN-Transformer, including replacing the TN branch architecture with a SwinV2 U-Net. The performance of the FCB-SwinV2 Transformer is evaluated on the popular colonoscopy segmentation benchmarking datasets Kvasir-SEG, CVC-ClinicDB and ETIS-LaribPolypDB. Generalizability tests are also conducted to determine if models can maintain accuracy when evaluated on data outside of the training distribution. The FCB-SwinV2 Transformer consistently achieves higher mean Dice and mean IoU scores when compared to other models reported in literature and therefore represents new state-of-the-art performance. The importance of understanding subtleties in evaluation metrics and dataset partitioning are also demonstrated and discussed. Code available: https://github.com/KerrFitzgerald/Polyp_FCB-SwinV2Transformer.},
+	author = {Kerr Fitzgerald and Jorge Bernal and Aymeric Histace and Bogdan J. Matuszewski},
+	doi = {10.1109/ACCESS.2024.3376228},
+	issn = {21693536},
+	journal = {IEEE Access},
+	keywords = {Medical image processing,SwinV2,deep learning,polyp segmentation,transformer},
+	pages = {38927-38943},
+	publisher = {Institute of Electrical and Electronics Engineers Inc.},
+	title = {Polyp Segmentation With the FCB-SwinV2 Transformer},
+	volume = {12},
+	year = {2024}
+}
+
+@inproceedings{He2023,
+	abstract = {Transformers for medical image segmentation have attracted broad interest. Unlike convolutional networks (CNNs), transformers use self-attentions that do not have a strong inductive bias. This gives transformers the ability to learn long-range dependencies and stronger modeling capacities. Although they, e.g. SwinUNETR, achieve state-of-the-art (SOTA) results on some benchmarks, the lack of inductive bias makes transformers harder to train, requires much more training data, and are sensitive to training recipes. In many clinical scenarios and challenges, transformers can still have inferior performances than SOTA CNNs like nnUNet. A transformer backbone and corresponding training recipe, which can achieve top performances under different medical image segmentation scenarios, still needs to be developed. In this paper, we enhance the SwinUNETR with convolutions, which results in a surprisingly stronger backbone, the SwinUNETR-V2, for 3D medical image segmentation. It achieves top performance on a variety of benchmarks of different sizes and modalities, including the Whole abdominal ORgan Dataset (WORD), MICCAI FLARE2021 dataset, MSD pancreas dataset, MSD prostate dataset, and MSD lung cancer dataset, all using the same training recipe (https://github.com/Project-MONAI/research-contributions/tree/main/SwinUNETR/BTCV, our training recipe is the same as that by SwinUNETR) with minimum changes across tasks.},
+	author = {Yufan He and Vishwesh Nath and Dong Yang and Yucheng Tang and Andriy Myronenko and Daguang Xu},
+	doi = {10.1007/978-3-031-43901-8_40},
+	isbn = {9783031439001},
+	issn = {16113349},
+	booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+	keywords = {Convolution,Hybrid model,Medical image segmentation,Swin transformer},
+	pages = {416-426},
+	publisher = {Springer Science and Business Media Deutschland GmbH},
+	title = {SwinUNETR-V2: Stronger Swin Transformers with Stagewise Convolutions for 3D Medical Image Segmentation},
+	volume = {14223 LNCS},
+	year = {2023}
+}
+
+@article{Islam2024,
+	abstract = {Generative Adversarial Networks are a class of artificial intelligence algorithms that consist of a generator and a discriminator trained simultaneously through adversarial training. GANs have found crucial applications in various fields, including medical imaging. In healthcare, GANs contribute by generating synthetic medical images, enhancing data quality, and aiding in image segmentation, disease detection, and medical image synthesis. Their importance lies in their ability to generate realistic images, facilitating improved diagnostics, research, and training for medical professionals. Understanding its applications, algorithms, current advancements, and challenges is imperative for further advancement in the medical imaging domain. However, no study explores the recent state-of-the-art development of GANs in medical imaging. To overcome this research gap, in this extensive study, we began by exploring the vast array of applications of GANs in medical imaging, scrutinizing them within recent research. We then dive into the prevalent datasets and pre-processing techniques to enhance comprehension. Subsequently, an in-depth discussion of the GAN algorithms, elucidating their respective strengths and limitations, is provided. After that, we meticulously analyzed the results and experimental details of some recent cutting-edge research to obtain a more comprehensive understanding of the current development of GANs in medical imaging. Lastly, we discussed the diverse challenges encountered and future research directions to mitigate these concerns. This systematic review offers a complete overview of GANs in medical imaging, encompassing their application domains, models, state-of-the-art results analysis, challenges, and research directions, serving as a valuable resource for multidisciplinary studies.},
+	author = {Showrov Islam and Md Tarek Aziz and Hadiur Rahman Nabil and Jamin Rahman Jim and M. F. Mridha and Md Mohsin Kabir and Nobuyoshi Asai and Jungpil Shin},
+	doi = {10.1109/ACCESS.2024.3370848},
+	issn = {21693536},
+	journal = {IEEE Access},
+	keywords = {Generative adversarial networks,medical image augmentation,medical image enhancement,medical image segmentation,medical image synthesis,medical imaging},
+	pages = {35728-35753},
+	publisher = {Institute of Electrical and Electronics Engineers Inc.},
+	title = {Generative Adversarial Networks (GANs) in Medical Imaging: Advancements, Applications, and Challenges},
+	volume = {12},
+	year = {2024}
+}
+
+@article{Zhou2023,
+	abstract = {Generative Adversarial Network (GAN) is a research hotspot in deep generative models, which has been widely used in the field of medical image fusion. This paper summarizes GAN models from the following four aspects: firstly, the basic principles of GAN are expounded from two aspects: basic model and training process; secondly, variant GAN models are summarized into three directions (Probability Distribution Distance, Overall Network Architecture, Neural Network Structure), from the methods based on f-divergence, the methods based on IPM, Single-Generator and Dual-Discriminators GAN, Multi-Generators and Single-Discriminator GAN, Multi-Generators and Multi-Discriminators GAN, Conditional Constraint GAN, Convolutional Neural Network structure GAN and Auto-Encoder Neural Network structure GAN are eight dimensions to summarize the typical models in recent years; thirdly, the advantages and application of GAN models in the field of medical image fusion are explored from three aspects; fourthly, the main challenges faced by GAN and the challenges faced by GAN models in medical image fusion field are discussed and the future prospects are given. This paper systematically summarizes various models of GAN, advantages and challenges of GAN models in medical image fusion field, which is very important for the future research of GAN.},
+	author = {Tao Zhou and Qi Li and Huiling Lu and Qianru Cheng and Xiangxiang Zhang},
+	doi = {10.1016/j.inffus.2022.10.017},
+	issn = {15662535},
+	journal = {Information Fusion},
+	keywords = {Generative adversarial network (GAN),Generative models,Medical image fusion,Multi-generators and multi-discriminators GAN,Probability distribution distance},
+	month = {3},
+	pages = {134-148},
+	publisher = {Elsevier B.V.},
+	title = {GAN review: Models and medical image fusion applications},
+	volume = {91},
+	year = {2023}
+}
+
+@misc{Jeong2022,
+	abstract = {In recent years, generative adversarial networks (GANs) have gained tremendous popularity for various imaging related tasks such as artificial image generation to support AI training. GANs are especially useful for medical imaging–related tasks where training datasets are usually limited in size and heavily imbalanced against the diseased class. We present a systematic review, following the PRISMA guidelines, of recent GAN architectures used for medical image analysis to help the readers in making an informed decision before employing GANs in developing medical image classification and segmentation models. We have extracted 54 papers that highlight the capabilities and application of GANs in medical imaging from January 2015 to August 2020 and inclusion criteria for meta-analysis. Our results show four main architectures of GAN that are used for segmentation or classification in medical imaging. We provide a comprehensive overview of recent trends in the application of GANs in clinical diagnosis through medical image segmentation and classification and ultimately share experiences for task-based GAN implementations.},
+	author = {Jiwoong J. Jeong and Amara Tariq and Tobiloba Adejumo and Hari Trivedi and Judy W. Gichoya and Imon Banerjee},
+	doi = {10.1007/s10278-021-00556-w},
+	issn = {1618727X},
+	issue = {2},
+	journal = {Journal of Digital Imaging},
+	keywords = {Generative adversarial networks,Image classification,Image generation,Image segmentation,Medical imaging},
+	month = {4},
+	pages = {137-152},
+	pmid = {35022924},
+	publisher = {Springer Science and Business Media Deutschland GmbH},
+	title = {Systematic Review of Generative Adversarial Networks (GANs) for Medical Image Classification and Segmentation},
+	volume = {35},
+	year = {2022}
+}
+
+@misc{Makhlouf2023,
+	abstract = {Generative Adversarial Networks (GANs) have been widely applied in various domains, including medical image analysis. GANs have been utilized in classification and segmentation tasks, aiding in the detection and diagnosis of diseases and disorders. However, medical image datasets often suffer from insufficiency and imbalanced class distributions. To overcome these limitations, researchers have employed GANs to generate augmented medical images, effectively expanding datasets and balancing class distributions. This review follows the PRISMA guidelines and systematically collects peer-reviewed articles on the development of GAN-based augmentation models. Automated searches were conducted on electronic databases such as IEEE, Scopus, Science Direct, and PubMed, along with forward and backward snowballing. Out of numerous articles, 52 relevant ones published between 2018 and February 2022 were identified. The gathered information was synthesized to determine common GAN architectures, medical image modalities, body organs of interest, augmentation tasks, and evaluation metrics employed to assess model performance. Results indicated that cGAN and DCGAN were the most popular GAN architectures in the reviewed studies. Medical image modalities such as MRI, CT, X-ray, and ultrasound, along with body organs like the brain, chest, breast, and lung, were frequently used. Furthermore, the developed models were evaluated, and potential challenges and future directions for GAN-based medical image augmentation were discussed. This review presents a comprehensive overview of the current state-of-the-art in GAN-based medical image augmentation and emphasizes the potential advantages and challenges associated with GAN utilization in this domain.},
+	author = {Ahmed Makhlouf and Marina Maayah and Nada Abughanam and Cagatay Catal},
+	doi = {10.1007/s00521-023-09100-z},
+	issn = {14333058},
+	issue = {34},
+	journal = {Neural Computing and Applications},
+	keywords = {GAN,Generative adversarial networks,Image augmentation,Medical image,Review,Systematic review},
+	month = {12},
+	pages = {24055-24068},
+	publisher = {Springer Science and Business Media Deutschland GmbH},
+	title = {The use of generative adversarial networks in medical image augmentation},
+	volume = {35},
+	year = {2023}
+}
+
+@article{Alamir2023,
+	abstract = {A generative adversarial network (GAN) is one of the most significant research directions in the field of artificial intelligence, and its superior data generation capability has garnered wide attention. In this article, we discuss the recent advancements in GANs, particularly in the medical field. First, the different medical imaging modalities and the principal theory of GANs were analyzed and summarized, after which, the evaluation metrics and training issues were determined. Third, the extension models of GANs were classified and introduced one-by-one. Fourth, the applications of GAN in medical images including cross-modality, augmentation, detection, classification, and reconstruction were illustrated. Finally, the problems we needed to resolve and future directions were discussed. The objective of this review is to provide a comprehensive overview of the GAN, simplify the GAN’s basics, and present the most successful applications in different scenarios.},
+	author = {Manal Alamir and Manal Alghamdi},
+	doi = {10.1145/3527849},
+	issn = {0360-0300},
+	issue = {5},
+	journal = {ACM Computing Surveys},
+	month = {5},
+	pages = {1-36},
+	title = {The Role of Generative Adversarial Network in Medical Image Analysis: An In-depth Survey},
+	volume = {55},
+	year = {2023}
+}
+
+@article{Gui2023,
+	author = {Jie Gui and Zhenan Sun and Yonggang Wen and Dacheng Tao and Jieping Ye},
+	doi = {10.1109/TKDE.2021.3130191},
+	issn = {1041-4347},
+	issue = {4},
+	journal = {IEEE Transactions on Knowledge and Data Engineering},
+	month = {4},
+	pages = {3313-3332},
+	title = {A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications},
+	volume = {35},
+	year = {2023}
+}
+
+@article{Abdelmotaal2021,
+	abstract = {Purpose: To assess the ability of pix2pix conditional generative adversarial network (pix2pix cGAN) to create plausible synthesized Scheimpflug camera color-coded corneal tomography images based upon a modest-sized original dataset to be used for image augmentation during training a deep convolutional neural network (DCNN) for classification of keratoconus and normal corneal images. Methods: Original images of 1778 eyes of 923 nonconsecutive patients with or without keratoconus were retrospectively analyzed. Images were labeled and preprocessed for use in training the proposed pix2pix cGAN. The best quality synthesized images were selected based on the Fréchet inception distance score, and their quality was studied by calculating the mean square error, structural similarity index, and the peak signal-to-noise ratio. We used original, traditionally augmented original and synthesized images to train a DCNN for image classification and compared classification performance metrics. Results: The pix2pix cGAN synthesized images showed plausible subjectively and objectively assessed quality. Training the DCNN with a combination of real and synthesized images allowed better classification performance compared with training using original images only or with traditional augmentation. Conclusions: Using the pix2pix cGAN to synthesize corneal tomography images can overcome issues related to small datasets and class imbalance when training computer-aided diagnostic models. Translational Relevance: Pix2pix cGAN can provide an unlimited supply of plausible synthetic Scheimpflug camera color-coded corneal tomography images at levels useful for experimental and clinical applications.},
+	author = {Hazem Abdelmotaal and Ahmed A. Abdou and Ahmed F. Omar and Dalia Mohamed El-Sebaity and Khaled Abdelazeem},
+	doi = {10.1167/tvst.10.7.21},
+	issn = {21642591},
+	issue = {7},
+	journal = {Translational Vision Science and Technology},
+	keywords = {Color-coded images,Convolutional neural network,Generative adversarial networks,Image augmentation,Pix2pix,Scheimpflug camera corneal tomography images,Synthesized images},
+	month = {6},
+	publisher = {Association for Research in Vision and Ophthalmology Inc.},
+	title = {Pix2pix conditional generative adversarial networks for scheimpflug camera color-coded corneal tomography image generation},
+	volume = {10},
+	year = {2021}
+}
+
+@article{Toda2022,
+	abstract = {Artificial intelligence (AI) applications in medical imaging continue facing the difficulty in collecting and using large datasets. One method proposed for solving this problem is data augmentation using fictitious images generated by generative adversarial networks (GANs). However, applying a GAN as a data augmentation technique has not been explored, owing to the quality and diversity of the generated images. To promote such applications by generating diverse images, this study aims to generate free-form lesion images from tumor sketches using a pix2pix-based model, which is an image-to-image translation model derived from GAN. As pix2pix, which assumes one-to-one image generation, is unsuitable for data augmentation, we propose StylePix2pix, which is independently improved to allow one-to-many image generation. The proposed model introduces a mapping network and style blocks from StyleGAN. Image generation results based on 20 tumor sketches created by a physician demonstrated that the proposed method can reproduce tumors with complex shapes. Additionally, the one-to-many image generation of StylePix2pix suggests effectiveness in data-augmentation applications.},
+	author = {Ryo Toda and Atsushi Teramoto and Masashi Kondo and Kazuyoshi Imaizumi and Kuniaki Saito and Hiroshi Fujita},
+	doi = {10.1038/s41598-022-16861-5},
+	issn = {20452322},
+	issue = {1},
+	journal = {Scientific Reports},
+	month = {12},
+	pmid = {35896575},
+	publisher = {Nature Research},
+	title = {Lung cancer CT image generation from a free-form sketch using style-based pix2pix for data augmentation},
+	volume = {12},
+	year = {2022}
+}
+
+@article{Isola2018,
+	abstract = {We investigate conditional adversarial networks as a general-purpose solution to image-to-image translation problems. These networks not only learn the mapping from input image to output image, but also learn a loss function to train this mapping. This makes it possible to apply the same generic approach to problems that traditionally would require very different loss formulations. We demonstrate that this approach is effective at synthesizing photos from label maps, reconstructing objects from edge maps, and colorizing images, among other tasks. Indeed, since the release of the pix2pix software associated with this paper, a large number of internet users (many of them artists) have posted their own experiments with our system, further demonstrating its wide applicability and ease of adoption without the need for parameter tweaking. As a community, we no longer hand-engineer our mapping functions, and this work suggests we can achieve reasonable results without hand-engineering our loss functions either.},
+	author = {Phillip Isola and Jun-Yan Zhu and Tinghui Zhou and Alexei A. Efros},
+	month = {11},
+	title = {Image-to-Image Translation with Conditional Adversarial Networks},
+	url = {http://arxiv.org/abs/1611.07004},
+	year = {2018}
+}
+
+@inproceedings{Simhadri2025,
+	author = {Shreyan Simhadri and Manoj Ponnam and Ramasani Rajitha and R. Balamurugan},
+	doi = {10.1109/ICIMIA67127.2025.11200914},
+	isbn = {979-8-3315-5386-9},
+	booktitle = {2025 4th International Conference on Innovative Mechanisms for Industry Applications (ICIMIA)},
+	month = {9},
+	pages = {984-989},
+	publisher = {IEEE},
+	title = {Enhanced Multi-Class Model Evaluation: Analyzing BERT, GPT-2, and LLaMA with Precision, Recall, and F1-Score Metrics},
+	year = {2025}
+}
+
+@article{JudeChukwuraObi2023,
+	abstract = {Six classification metrics namely, Accuracy, Precision, Recall (Sensitivity), Specificity, F1-Score and Area Under the Curve have been studied in this work. A classification model based on the Support Vector Machine, was used to obtain a confusion matrix, which provided the needed information for calculating the different classification metrics. Twenty different datasets were used to assess the performances of the classification metrics. Accuracy and Area Under the Curve are the two metrics that consistently gave a classification result given each dataset used in the study. Although accuracy appears to be marginally better that AUC, it was discovered that in some cases where sensitivity is zero, accuracy yielded a high correct classification result. This goes further to implying that prior to choosing accuracy as a preferred metric for classification, investigation should be carried out to find out what sensitivity and specificity are. Where there are high values for sensitivity and specificity, the study shows that a choice of accuracy as a preferred classification metric leads to a high percentage of correct classification result.},
+	author = {Jude Chukwura Obi},
+	doi = {10.30574/wjaets.2023.8.1.0054},
+	issue = {1},
+	journal = {World Journal of Advanced Engineering Technology and Sciences},
+	month = {2},
+	pages = {308-314},
+	publisher = {GSC Online Press},
+	title = {A comparative study of several classification metrics and their performances on data},
+	volume = {8},
+	year = {2023}
+}
+
+@article{Salmanpour2025,
+	abstract = {This study evaluates metrics for tasks such as classification, regression, clustering, correlation analysis, statistical tests, segmentation, and image-to-image (I2I) translation in medical imaging domains. Metrics were compared across Python libraries, R packages, and Matlab functions to assess their consistency and highlight discrepancies. The findings underscore the need for a unified roadmap to standardize metrics, ensuring reliable and reproducible ML evaluations across platforms. This study examined a wide range of evaluation metrics across various tasks in medical imaging and found only some to be consistent across platforms, such as Accuracy, Balanced Accuracy, Cohens Kappa, F-beta Score, MCC, Geometric Mean, AUC, and Log Loss in binary classification; Accuracy, Cohens Kappa, and F-beta Score in multi-class classification; MAE, MSE, RMSE, MAPE, Explained Variance, Median AE, MSLE, and Huber in regression; Davies-Bouldin Index and Calinski-Harabasz Index in clustering; Pearson, Spearman, Kendall’s Tau, Mutual Information, Distance Correlation, Bicor, Percbend, Shepherd, and Partial Correlation in correlation analysis; Paired t-test, Chi-Square Test, ANOVA, Kruskal-Wallis Test, Shapiro-Wilk Test, Welch’s t-test, and Bartlett’s test in statistical tests; Accuracy, Precision, and Recall in 2D segmentation; Accuracy in 3D segmentation; MAE, MSE, RMSE, and R-Squared in 2D-I2I translation; and MAE, MSE, and RMSE in 3D-I2I translation. Given observation of discrepancies in a number of metrics (e.g. precision, recall and F1 score in binary classification, WCSS in clustering, and multiple statistical tests, amongst multiple metrics), this study concludes that ML evaluation metrics require standardization and recommends that future research use consistent metrics for different tasks to effectively compare ML techniques and solutions.INDEX TERMS 2D/3D medical images, consistency of evaluation metrics in multi-framework, evaluation metric roadmap, ML evaluation metrics.},
+	author = {Mohammad R. Salmanpour and Morteza Alizadeh and Ghazal Mousavi and Saba Sadeghi and Sajad Amiri and Mehrdad Oveisi and Arman Rahmim and Ilker Hacihaliloglu},
+	doi = {10.1109/ACCESS.2025.3549702},
+	issn = {21693536},
+	journal = {IEEE Access},
+	keywords = {2D/3D medical images,ML evaluation metrics,consistency of evaluation metrics in multi-framework,evaluation metric roadmap},
+	pages = {47217-47229},
+	publisher = {Institute of Electrical and Electronics Engineers Inc.},
+	title = {Machine Learning Evaluation Metric Discrepancies Across Programming Languages and Their Components in Medical Imaging Domains: Need for Standardization},
+	volume = {13},
+	year = {2025}
+}
+
+@article{Li2025,
+	abstract = {This study investigates the noise impact on reconstructed images in computer-generated holography (CGH) through theoretical analysis and Matlab 2015b simulations. By quantitatively injecting noise to mimic practical interference environments, we systematically analyze the degradation mechanisms of four CGH types: detour-phase, modified off-axis beam reference, kinoform, and interference type. A dual-metric evaluation framework combining peak signal-to-noise ratio (PSNR) and the Structural Similarity Index Measure (SSIM) is proposed. Results demonstrate that increasing noise intensity induces progressive declines in reconstruction quality, manifested as PSNR reduction and SSIM-based structural fidelity loss. The findings provide theoretical guidance for noise suppression, parameter optimization, and algorithm selection in CGH systems, advancing its applications in optical encryption and high-precision imaging.},
+	author = {Yucheng Li and Yang Zhang and Deyu Jia and Song Gao and Muqun Zhang},
+	doi = {10.3390/app15116047},
+	issn = {20763417},
+	issue = {11},
+	journal = {Applied Sciences (Switzerland)},
+	keywords = {Matlab simulation,computer-generated holography (CGH),image quality assessment,noise robustness,structural similarity index measure (SSIM)},
+	month = {6},
+	publisher = {Multidisciplinary Digital Publishing Institute (MDPI)},
+	title = {Noise Impact Analysis in Computer-Generated Holography Based on Dual Metrics Evaluation via Peak Signal-to-Noise Ratio and Structural Similarity Index Measure},
+	volume = {15},
+	year = {2025}
+}
+
+@article{Sara2019,
+	abstract = {Quality is a very important parameter for all objects and their functionalities. In image-based object recognition, image quality is a prime criterion. For authentic image quality evaluation, ground truth is required. But in practice, it is very difficult to find the ground truth. Usually, image quality is being assessed by full reference metrics, like MSE (Mean Square Error) and PSNR (Peak Signal to Noise Ratio). In contrast to MSE and PSNR, recently, two more full reference metrics SSIM (Structured Similarity Indexing Method) and FSIM (Feature Similarity Indexing Method) are developed with a view to compare the structural and feature similarity measures between restored and original objects on the basis of perception. This paper is mainly stressed on comparing different image quality metrics to give a comprehensive view. Experimentation with these metrics using benchmark images is performed through denoising for different noise concentrations. All metrics have given consistent results. However, from representation perspective, SSIM and FSIM are normalized, but MSE and PSNR are not; and from semantic perspective, MSE and PSNR are giving only absolute error; on the other hand, SSIM and PSNR are giving perception and saliency-based error. So, SSIM and FSIM can be treated more understandable than the MSE and PSNR.},
+	author = {Umme Sara and Morium Akter and Mohammad Shorif Uddin},
+	doi = {10.4236/jcc.2019.73002},
+	issn = {2327-5219},
+	issue = {03},
+	journal = {Journal of Computer and Communications},
+	pages = {8-18},
+	publisher = {Scientific Research Publishing, Inc,},
+	title = {Image Quality Assessment through FSIM, SSIM, MSE and PSNR—A Comparative Study},
+	volume = {07},
+	year = {2019}
+}
+
+@article{Lin2022,
+	abstract = {Structural Similarity Index Measure (SSIM) has been a very successful tool in image processing and computer vision. After almost two decades, it is still the most popular method for quantifying the similarity between original and distorted images with applications in image quality assessment, image retrieval, video coding, computer vision, image encryption and data-hiding. Despite its general success, there are some types of distortions, such as when the distortion is of non-Gaussian character, where SSIM does not sustain its success. We provide a generalized version of SSIM utilizing lp-norm (1≤p≤2) based sample moments as opposed to the classical SSIM which uses l2-norm based sample moments. In particular, we study the l1-norm special case and our simulations on well-known image-databases show superior performance compared to SSIM and related measures.},
+	author = {Lili Lin and Hong Chen and Ercan Engin Kuruoglu and Wenhui Zhou},
+	doi = {10.1016/j.patrec.2022.09.011},
+	issn = {01678655},
+	journal = {Pattern Recognition Letters},
+	keywords = {Non-Gaussian noise,Robust SSIM,SSIM,l1-norm SSIM,lp-norm SSIM},
+	month = {11},
+	pages = {10-16},
+	publisher = {Elsevier B.V.},
+	title = {Robust structural similarity index measure for images with non-Gaussian distortions},
+	volume = {163},
+	year = {2022}
+}
+
+@article{Peng2020,
+	abstract = {Purpose: To apply an imaging metric of the structural SIMilarity (SSIM) index to the radiotherapy dose verification field and evaluate its capability to reveal the different types of errors between two dose distributions. Method: The SSIM index consists of three sub-indices: luminance, contrast, and structure. Given two images, luminance analysis compares the local mean result, contrast analysis compares the local standard deviation, and the structure index represents the local Pearson correlation. Three test error patterns (absolute dose error, dose gradient error, and dose structure error) were designed to characterize the response of SSIM and its sub-indices and establish the correlation between the indices and different dose error types. After establishing the correlation, four radiotherapy plans (one MLC picket-fence test plan, one brain stereotactic radiotherapy plan, and two head-and-neck plans) were tested by computing each index and compared with the gamma analysis results to determine their similarities and differences. Results: Among the three test error patterns, the luminance index decreased from 1 to 0.1 when the absolute dose agreement fell from 100\% to 5\%, the contrast index decreased from 1 to 0.36 when the dose gradient agreement fell from 100\% to 10\%, and the structure index decreased from 1 to 0.23 when the periodical dose pattern shifted (leading to a lower correlation). Thus, the luminance, contrast and structure index can detect the absolute dose error, gradient discrepancy, and dose structure error, respectively. For the four clinical cases, the sub-indices can reveal the type of error when gamma analysis only provided limited information. Conclusions: The correlation between the subcomponents of the SSIM index and the error types of the dose distribution were established. The SSIM index provides additional error information compared to that provided by gamma analysis.},
+	author = {Jiayuan Peng and Chengyu Shi and Eric Laugeman and Weigang Hu and Zhen Zhang and Sasa Mutic and Bin Cai},
+	doi = {10.1002/mp.14010},
+	issn = {24734209},
+	issue = {4},
+	journal = {Medical Physics},
+	keywords = {SSIM,dose distribution,quality assurance},
+	month = {4},
+	pages = {1907-1919},
+	pmid = {31901143},
+	publisher = {John Wiley and Sons Ltd},
+	title = {Implementation of the structural SIMilarity (SSIM) index as a quantitative evaluation tool for dose distribution error detection},
+	volume = {47},
+	year = {2020}
+}
+
+@article{Yadav2025,
+	abstract = {This paper presents a method for digital signature verification utilizing a combination of optical character recognition (OCR) and string similarity metrics, implemented in Python. The proposed method involves preprocessing input images, extracting text, and comparing the text for similarity using the SequenceMatcher algorithm. Additionally, the Structural Similarity Index (SSIM) is employed to assess the visual similarity between the images. This paper presents a method for signature verification without delving much into machine learning or deep learning. Experimental results demonstrate the effectiveness of this approach in verifying digital signatures, offering a robust solution for enhancing security in electronic documents.},
+	author = {Himanshu Yadav},
+	doi = {10.22214/ijraset.2025.71177},
+	issue = {5},
+	journal = {International Journal for Research in Applied Science and Engineering Technology},
+	month = {5},
+	pages = {4086-4088},
+	publisher = {International Journal for Research in Applied Science and Engineering Technology (IJRASET)},
+	title = {Structural Similarity Index Measure Based Signature Verification Using Python},
+	volume = {13},
+	year = {2025}
+}
+

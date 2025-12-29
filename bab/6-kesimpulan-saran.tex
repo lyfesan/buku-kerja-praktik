@@ -1,32 +1,35 @@
-% Ubah kalimat sesuai dengan judul dari bab ini
 \chapter{KESIMPULAN DAN SARAN}
 
 % Ubah konten-konten berikut sesuai dengan yang ingin diisi pada bab ini
 
 \section{Kesimpulan}
 
-Kesimpulan yang kami peroleh dari \lipsum[28][1-3] adalah:
+Berdasarkan seluruh rangkaian kegiatan kerja praktik yang telah dilakukan mulai dari perancangan hingga pengujian sistem fault tolerance untuk mitigasi artefak gerak pada citra MRI otak, dapat ditarik beberapa kesimpulan utama sebagai berikut.
 
 \begin{enumerate}[nolistsep]
 
-  \item Pembuatan \lipsum[29][1-3]
+  \item Simulasi \textit{motion artifact} yang dilakukan melalui manipulasi domain frekuensi atau k-space dapat menghasilkan dataset pelatihan yang realistis dan mampu meniru kondisi klinis sebenarnya.
 
-  \item \lipsum[29][4-6]
+  \item Penggunaan arsitektur berbasis Transformer memberikan keunggulan yang signifikan dibandingkan model konvensional CNN dengan model SwinV2 Transformer sebagai model terbaik yang mencatatkan akurasi sebesar 93.82 persen dan F1-Score sebesar 95.36 persen.
 
-  \item \lipsum[29][7-9]
+  \item Modul koreksi berbasis Pix2Pix GAN berhasil merestorasi citra berartefak kembali menjadi citra bersih dengan kualitas yang sangat tinggi yang dibuktikan melalui perolehan nilai PSNR sebesar 35,75 dB dan SSIM sebesar 0,9166.
+  
+  \item Integrasi antara modul klasifikasi dan modul koreksi membentuk kerangka kerja fault tolerance yang andal untuk memastikan citra yang diteruskan ke tahap analisis selanjutnya memiliki kualitas yang layak untuk diagnosis.
 
 \end{enumerate}
 
 \section{Saran}
 
-Saran yang kami ajukan dalam \lipsum[30][1-2] antara lain:
+Untuk meningkatkan kinerja dan memperluas cakupan sistem ini di masa mendatang, terdapat beberapa langkah strategis yang dapat dikembangkan lebih lanjut.
 
 \begin{enumerate}[nolistsep]
 
-  \item Sebaiknya \lipsum[31][1-3]
+  \item Pengembangan selanjutnya disarankan dapat mencakup jenis artefak medis lainnya yang sering ditemui dalam MRI seperti artefak \textit{aliasing} atau \textit{noise} frekuensi tinggi agar sistem memiliki cakupan proteksi yang lebih menyeluruh.
 
-  \item \lipsum[31][4-6]
+  \item Transisi dari pemrosesan irisan dua dimensi menuju pemrosesan volume MRI tiga dimensi secara utuh sangat disarankan guna menjaga konsistensi fitur anatomi antar-irisan yang lebih baik.
 
-  \item \lipsum[31][7-9]
+  \item Validasi menggunakan dataset artefak dari mesin MRI di rumah sakit diperlukan untuk menguji kemampuan generalisasi model terhadap gerakan pasien yang sebenarnya di lingkungan klinis yang lebih dinamis.
+  
+  \item Pengujian integrasi penuh secara \textit{end-to-end} dengan sistem \textit{image captioning} medis perlu dilakukan untuk mengukur peningkatan kualitas deskripsi klinis yang dihasilkan secara langsung setelah melalui proses koreksi artefak.
 
 \end{enumerate}

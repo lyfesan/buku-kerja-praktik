@@ -1,0 +1,18 @@
+% Contoh pembuatan tabel
+\begin{longtable}{|p{2cm}|p{4cm}|p{4cm}|}
+  % Keterangan dari tabel yang dibuat
+  \caption{Konfigurasi \textit{Hyperparameter} Model Klasifikasi}
+  % Label referensi dari tabel yang dibuat
+  \label{tb:hyperparameter}\\
+  % Isi dari tabel yang dibuat
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Parameter} & \textbf{Konfigurasi CNN} & \textbf{Konfigurasi Transformer} \\ \hline
+  \textit{Input Size} & ResNet \& DenseNet: $256 \times 256$, EfficientNet: $224 \times 224$ & SwinV2: $224 \times 224$, ViT: $256 \times 256$ \\ \hline
+  \textit{Batch Size} & 32 & 32 \\ \hline
+  \textit{Optimizer} & Adam & AdamW \\ \hline
+  \textit{Learning Rate} & \textit{Warm Up}:$1e-4$, \textit{Fine tune}: $7e-6$ & $1e-4$ \\ \hline
+  Epochs & \textit{Warm Up}: 10, \textit{Fine Tune}: 40 & 20 \\ \hline
+  Regularisasi & \textit{Dropout (0.5)}, \textit{Early Stopping (Patience=5)}& \textit{Weight Decay (0.01), Early Stopping (Patience=5)} \\ \hline
+  Augmentasi & \textit{RandomFlip, RandomZoom} & \textit{RandomFlip, ColorJitter, RandomResizedCrop} \\ \hline
+\end{longtable}

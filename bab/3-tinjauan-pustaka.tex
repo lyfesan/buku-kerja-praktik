@@ -17,24 +17,72 @@ ResNet (\textit{Residual Network}) adalah arsitektur \textit{deep neural network
 
 \section{\textit{DenseNet}}
 
+DenseNet adalah arsitektur \textit{convolutional neural network} yang menghubungkan setiap lapisan secara langsung dengan semua lapisan sebelumnya sehingga meningkatkan efisiensi pemanfaatan fitur dan mengatasi masalah \textit{vanishing gradient}. Dalam bidang medis, DenseNet telah banyak diterapkan untuk segmentasi dan klasifikasi citra medis dengan hasil yang baik. DRINet menggabungkan blok konvolusi dengan koneksi \textit{dense} dan modul \textit{residual inception} untuk segmentasi multi kelas pada citra CT dan MRI otak, menunjukkan performa lebih baik dibandingkan U-Net tradisional \citep{Vulli2022}. DenseNet juga digunakan dalam klasifikasi citra histopatologi kanker payudara dengan melakukan \textit{interleaving} modul \textit{squeeze-and-excitation} (SENet) yang meningkatkan akurasi klasifikasi dibandingkan metode lain \citep{Li2020}. Selain itu, model ringan yang menggabungkan PCANet dan DenseNet berhasil meningkatkan klasifikasi citra mamografi dan histologi osteosarkoma dengan pelatihan yang lebih efisien pada dataset kecil \citep{Huang2020}. Strategi \textit{fine-tuning} DenseNet pada berbagai modalitas citra medis juga menunjukkan peningkatan performa signifikan yang menunjukkan fleksibilitas dan keunggulan DenseNet dalam aplikasi medis \citep{Davila2024}.
+
 \section{\textit{EfficientNet}}
+
+EfficientNet adalah arsitektur CNN yang mengoptimalkan keseimbangan antara kedalaman, lebar, dan resolusi jaringan menggunakan metode \textit{compound scaling} sehingga menghasilkan model yang efisien dengan jumlah parameter relatif kecil namun tetap memiliki kinerja tinggi \citep{Hoang2021}. Dalam aplikasi medis, EfficientNet banyak digunakan untuk klasifikasi dan diagnosis penyakit dengan akurasi yang baik. Sebagai contoh, Deep-EFNet yang berbasis EfficientNetB0 dapat mengklasifikasikan tumor otak pada citra MRI dengan akurasi hingga 98\% dengan performa stabil di berbagai dataset melalui penambahan \textit{batch normalization}, \textit{dropout}, dan regularisasi L2 \citep{Alshaari2025}. Pada klasifikasi kanker payudara, kombinasi EfficientNetB0 dan ResNet50 meningkatkan akurasi hingga 94\%, menunjukkan keunggulan arsitektur ini dalam mendeteksi kanker histopatologi \citep{Shahzad2025}. Selain itu, EfficientNet juga digunakan dalam model klasifikasi citra medis lain dengan efisiensi komputasi yang baik sehingga menjadi pilihan populer untuk aplikasi medis yang membutuhkan keseimbangan antara akurasi dan kecepatan pemrosesan \citep{Kumar2025}.
 
 \section{\textit{Vision} Transformer (ViT)}
 
+\textit{Vision} Transformer (ViT) memodelkan citra sebagai urutan \textit{patch} dan menggunakan \textit{self‑attention} untuk menangkap dependensi jarak jauh serta konteks global, sehingga melengkapi CNN yang hanya memiliki \textit{receptive field lokal} \citep{Shamshad2023}. Dalam bidang medis, ViT banyak dipakai untuk klasifikasi, segmentasi, deteksi, registrasi, dan rekonstruksi, serta seringkali digabungkan dengan CNN dalam arsitektur hibrida agar fitur lokal dan global dapat diekstraksi secara bersamaan \citep{Hussain2025, Xiao2023}. Berbagai studi dan tinjauan menunjukkan bahwa model berbasis transformer ini umumnya melampaui atau setidaknya menyaingi CNN/U‑Net konvensional pada tugas segmentasi organ dan tumor, klasifikasi tumor otak, kanker payudara histopatologi, dan diagnosis retina \citep{Al-hammuri2023, Aburass2025}.
+
 \section{SwinV2 Transformer}
+
+Swin Transformer V2 (SwinV2) adalah pengembangan dari Swin Transformer yang menggunakan mekanisme \textit{self-attention} dalam jendela geser untuk menangkap dependensi lokal dan global secara efisien dengan kompleksitas komputasi rendah. Model ini menggabungkan konvolusi dan \textit{self-attention} melalui struktur seperti Swin Transformer \textit{Stem} dan \textit{dual-branch downsampling} untuk meningkatkan ekstraksi fitur, serta menggunakan teknik stabilisasi pelatihan seperti \textit{residual post normalization} dan \textit{scaled cosine attention} agar dapat dilatih pada resolusi tinggi dan model besar hingga 3 miliar parameter \citep{Liu2022}. SwinV2 telah diterapkan dalam berbagai bidang, termasuk segmentasi polip usus dengan model hibrida CNN-Transformer yang menunjukkan performa unggul pada dataset benchmark, serta segmentasi 3D medis dengan SwinUNETR-V2 yang menggabungkan konvolusi bertahap untuk hasil lebih baik \citep{Fitzgerald2024, He2023}. Pendekatan hierarkis dan \textit{shifted windows} membuat SwinV2 mampu mengoptimalkan efisiensi dan efektivitas pemodelan konteks spasial pada citra kompleks \citep{Liu2022}. Dengan peningkatan stabilitas, skalabilitas, dan kemampuan generalisasi, SwinV2 menjadi model kuat untuk pengolahan citra dan aplikasi medis
 
 \section{\textit{Generative Adversarial Network}}
 
+Generative Adversarial Networks (GAN) adalah model generatif yang terdiri dari dua jaringan, yaitu \textit{generator} dan \textit{discriminator} yang dilatih secara kompetitif untuk menghasilkan data baru yang realistis dari distribusi data asli \citep{Gui2023}. GAN banyak digunakan dalam bidang medis, terutama untuk pengolahan citra medis seperti fusi citra, augmentasi data, segmentasi, dan rekonstruksi gambar. GAN mampu menghasilkan citra medis sintetis yang realistis, membantu mengatasi keterbatasan data pelatihan dan ketidakseimbangan kelas pada dataset medis \citep{Zhou2023, Jeong2022}. Berbagai varian GAN seperti cGAN dan DCGAN sering dipakai untuk meningkatkan kualitas dan kuantitas data medis pada modalitas seperti MRI, CT, dan X-ray, serta organ seperti otak, dada, dan payudara \citep{Makhlouf2023}. Selain itu, GAN juga digunakan untuk deteksi penyakit, klasifikasi, dan peningkatan resolusi citra medis, yang mendukung diagnosis dan pelatihan klinis \citep{Islam2024, Alamir2023}.
+
 \section{Pix2Pix}
+
+Pix2Pix adalah model \textit{image-to-image translation} berbasis \textit{conditional} GAN yang mampu mempelajari pemetaan dari gambar input ke gambar output dengan fungsi \textit{loss} yang dipelajari secara otomatis, sehingga dapat diaplikasikan pada berbagai tugas seperti rekonstruksi objek, pewarnaan gambar, dan sintesis foto dari peta label \citep{Isola2018}. Dalam bidang medis, Pix2Pix digunakan untuk augmentasi data dan peningkatan kualitas citra seperti menghasilkan citra tomografi kornea yang realistis untuk membantu klasifikasi penyakit seperti \textit{keratoconus} untuk meningkatkan kinerja model klasifikasi dibandingkan dengan hanya menggunakan data asli saja \citep{Abdelmotaal2021}. Varian Pix2Pix juga diterapkan untuk menghasilkan citra tumor dari \textit{free sketch} guna mendukung augmentasi data pada diagnosis kanker paru-paru \citep{Toda2022}. Secara keseluruhan, Pix2Pix merupakan metode yang efektif dan fleksibel untuk transformasi citra yang banyak dimanfaatkan dalam pengolahan citra medis dan augmentasi data.
 
 \section{Metrik Evaluasi}
 
+Pada bagian ini, dijelaskan metrik evaluasi yang digunakan untuk mengukur kinerja model klasifikasi dan model koreksi. Evaluasi dilakukan untuk menilai seberapa akurat hasil klasifikasi artefak dan koreksi citra dibandingkan dengan label dan gambar yang asli.
+
 \subsection{Metrik Evaluasi Klasifikasi Gambar}
 
-\subsection{\textit{Peak Signal-to-Noise Ratio}}
+Metrik evaluasi klasifikasi gambar digunakan untuk menilai kinerja model dalam mengklasifikasikan data gambar \textit{Confusion matrix} adalah matrix yang menunjukkan jumlah prediksi benar dan salah yang dibagi ke dalam empat kategori: \textit{True Positive} (TP), \textit{False Positive} (FP), \textit{True Negative} (TN), dan \textit{False Negative} (FN) \citep{JudeChukwuraObi2023}. Dari \textit{confusion matrix}, dapat dihitung beberapa metrik utama:
 
-\subsection{\textit{Structural Similarity Index}}
+\begin{enumerate}[nolistsep]
+	\item Akurasi mengukur proporsi prediksi yang benar dari seluruh data yang dihitung menggunakan Persamaan \ref{eq:accuracy}.
+	\begin{equation}
+		Akurasi=\frac{TP+TN}{TP+TN+FP+FN}
+		\label{eq:accuracy}
+	\end{equation}
+	
+	\item Presisi menunjukkan seberapa tepat prediksi positif, dihitung dengan Persamaan \ref{eq:precision}.
+	\begin{equation}
+		Presisi=\frac{TP}{TP+FP}
+		\label{eq:precision}
+	\end{equation} 
+	
+	\item \textit{Recall} atau sensitivitas mengukur kemampuan model menemukan semua kasus positif yang dihitung dengan Persamaan \ref{eq:recall}.
+	\begin{equation}
+		Recall=\frac{TP}{TP+FN}
+		\label{eq:recall}
+	\end{equation}
+	
+	\item \textit{F1-Score} adalah rata-rata harmonis dari presisi dan \textit{recall} yang memberikan keseimbangan antara kedua metrik tersebut yang dihitung dengan Persamaan \ref{eq:f1score}.
+	\begin{equation}
+		\text{F1-Score} = 2 \times \frac{Presisi \times Recall}{Presisi+Recall}
+		\label{eq:f1score}
+	\end{equation}
+	
+\end{enumerate}
 
+Metrik-metrik ini sangat berguna terutama pada dataset yang tidak seimbang, karena dengan menggunakan akurasi saja dapat menyesatkan jika kelas dominan sangat banyak \citep{Salmanpour2025}. Penggunaan \textit{confusion matrix} dan metrik klasifikasi ini membantu dalam memahami kekuatan dan kelemahan model klasifikasi gambar secara lebih mendalam \citep{Simhadri2025}.
+
+\subsection{\textit{Peak Signal-to-Noise Ratio} (PSNR)}
+
+\textit{Peak Signal-to-Noise Ratio} (PSNR) adalah metrik yang digunakan untuk mengukur kualitas citra hasil pemrosesan dengan membandingkan citra hasil dengan citra referensi asli. PSNR mengukur rasio antara nilai puncak sinyal dengan tingkat \textit{noise} yang mengganggu sinyal tersebut dan biasanya dinyatakan dalam satuan desibel (dB) \citep{Sara2019}. Semakin tinggi nilai PSNR, semakin baik kualitas citra hasil karena tingkat \textit{noise} yang lebih rendah, sehingga hasil citra lebih mendekati citra asli \citep{Li2025}. PSNR menjadi metrik dasar yang penting dalam evaluasi kualitas citra, khususnya dalam konteks kompresi, denoising, dan rekonstruksi citra \citep{Sara2019}.
+
+\subsection{\textit{Structural Similarity Index Measure} (SSIM)}
+
+\textit{Structural Similarity Index Measure} (SSIM) adalah metrik yang digunakan untuk menilai kualitas citra dengan mengukur kesamaan struktural antara citra asli dan citra hasil pemrosesan. SSIM mempertimbangkan tiga aspek utama yaitu luminansi, kontras, dan struktur, sehingga lebih mencerminkan persepsi visual manusia dibandingkan metrik tradisional seperti MSE atau PSNR \citep{Sara2019, Peng2020}. SSIM sangat populer dalam berbagai aplikasi pengolahan citra dan computer vision karena kemampuannya untuk menangkap perubahan visual yang penting secara struktural \citep{Lin2022}. SSIM juga dapat digunakan untuk evaluasi kualitas citra medis, pengenalan pola, dan verifikasi tanda tangan digital \citep{Peng2020, Yadav2025}. Secara umum, SSIM memberikan pengukuran kualitas citra yang lebih sesuai dengan persepsi manusia dibandingkan metrik berbasis \textit{error} absolut.  
 %% Contoh input gambar dengan format *.jpg
 %\begin{figure} [ht] \centering
 %  % Nama dari file gambar yang diinputkan

@@ -1,18 +1,71 @@
 % Ubah kalimat sesuai dengan judul dari bab ini
 \chapter{PENGUJIAN DAN EVALUASI}
 
-% Ubah konten-konten berikut sesuai dengan yang ingin diisi pada bab ini
+ Ubah konten-konten berikut sesuai dengan yang ingin diisi pada bab ini
+Bab ini membahas skenario pengujian yang dilakukan untuk memvalidasi kinerja sistem serta hasil evaluasi dari modul klasifikasi dan modul koreksi. Pengujian bertujuan untuk memastikan bahwa model yang dibangun mampu mengenali jenis artefak dengan akurat dan memperbaiki citra yang rusak secara efektif.
 
 \section{Skenario Pengujian}
 
-Pengujian dilakukan dengan \lipsum[24]
+Skenario pengujian dirancang untuk mengukur kinerja model dalam lingkungan yang terkontrol namun representatif terhadap masalah yang dihadapi. Pengujian dilakukan secara terpisah untuk modul klasifikasi dan modul koreksi.
+
+\subsection{Lingkungan Pengujian}
+
+Seluruh proses pelatihan dan pengujian dilakukan menggunakan platform Kaggle Notebook. Lingkungan ini menyediakan spesifikasi perangkat keras berupa satu GPU NVIDIA Tesla P100 dan RAM sebesar 32 GB yang memadai untuk komputasi \textit{deep learning}. Perangkat lunak utama yang digunakan adalah bahasa pemrograman Python 3.10 dengan dukungan \textit{library} Tensorflow, Pytorch, Transformers, Pandas, NumPy, dan Matplotlib. 
+
+\subsection{Skenario Pengujian Modul Klasifikasi}
+
+Pengujian modul klasifikasi bertujuan membandingkan performa antara arsitektur CNN dan Transformer. Dalam pelaksanaannya, dataset dibagi menjadi data latih (\textit{training set}) yang digunakan untuk melatih bobot model dan data uji (\textit{test set}) yang digunakan sebagai data validasi untuk memantau metrik performa seperti \textit{validation loss} dan akurasi pada setiap epoch. Data uji juga digunakan sebagai acuan dalam penerapan mekanisme \textit{early stopping} untuk mencegah terjadinya \textit{overfitting}.
+
+Konfigurasi \textit{hyperparameter} ditetapkan secara seragam pada aspek-aspek umum untuk memastikan perbandingan yang adil antara model CNN (ResNet50, DenseNet121, EfficientNetB0) dan Transformer (ViT, Swin Transformer). Meskipun demikian, penyesuaian khusus tetap dilakukan pada komponen \textit{optimizer} dan regularisasi agar kinerja masing-masing arsitektur dapat mencapai titik optimal. Rincian lengkap mengenai konfigurasi tersebut disajikan pada Tabel \ref{tb:hyperparameter}
+
+%Inout tabel hyperaparameter
+\input{tabel/hyperparameter.tex} 
+
+Setelah proses pelatihan selesai, kinerja model dievaluasi secara menggunakan empat metrik klasifikasi utama. Akurasi (\textit{Accuracy}) digunakan untuk melihat rasio prediksi yang benar terhadap keseluruhan data. Presisi (\textit{Precision}) dihitung untuk mengukur ketepatan prediksi positif model terhadap data aktual, yang sangat penting untuk meminimalkan \textit{false positive}. \textit{Recall} (sensitivitas) digunakan untuk mengukur kemampuan model dalam menemukan kembali seluruh informasi yang relevan. Terakhir, F1-Score digunakan sebagai rata-rata harmonik antara presisi dan \textit{recall} untuk memberikan gambaran kinerja yang seimbang pada dataset \textit{multi-class}.
+
+\subsection{Skenario Pengujian Modul Koreksi}
+
+Pengujian modul koreksi difokuskan untuk menilai kemampuan \textit{Generator} dalam arsitektur Pix2Pix GAN untuk merekonstruksi citra bersih dari citra dengan artefak. Model dilatih dengan input citra berukuran $256 \times 256$ piksel selama 250 epoch. Proses optimasi menggunakan algoritma Adam dengan parameter momentum $\beta_1=0.5$ dan $\beta_2=0.999$, serta learning rate konstan sebesar $2e-4$. Dalam fungsi \textit{loss} gabungan, bobot $\lambda$ diatur sebesar 100. Nilai ini dipilih untuk memberikan prioritas yang jauh lebih tinggi pada L1 \textit{Loss} (kemiripan piksel absolut) dibandingkan \textit{Adversarial Loss}. Tujuannya adalah memastikan struktur anatomi otak tetap terjaga dan tidak berubah bentuk meskipun teksturnya diperbaiki oleh GAN.
+
+Kualitas citra hasil rekonstruksi kemudian dievaluasi menggunakan dua metrik standar dalam pemrosesan citra medis. Metrik pertama adalah \textit{Peak Signal-to-Noise Ratio} (PSNR) yang mengukur rasio antara nilai maksimum sinyal dan noise dalam satuan desibel (dB); nilai yang lebih tinggi mengindikasikan kualitas rekonstruksi yang lebih baik. Metrik kedua adalah \textit{Structural Similarity Index} (SSIM) yang mengukur kemiripan struktural (luminansi, kontras, dan struktur) antara citra hasil koreksi dengan citra asli (\textit{ground truth}). Nilai SSIM berkisar antara -1 hingga 1. Nilai yang mendekati 1 menunjukkan bahwa struktur citra hasil rekonstruksi sangat identik dengan aslinya.
 
 \section{Evaluasi Pengujian}
 
-Dari pengujian yang \lipsum[25][1-10]
+Bagian ini memaparkan hasil eksperimen berdasarkan skenario yang telah ditetapkan di atas, mencakup analisis kuantitatif dan kualitatif.
 
-% Contoh input konten dari file terpisah
-\input{tabel/energi-kecepatan.tex}
+\subsection{Evaluasi Modul Klasifikasi Artefak}
 
-% Contoh penggunaan referensi dari tabel yang dibuat
-Sesuai dengan hasil pada Tabel \ref{tb:EnergiKecepatan}, didapatkan bahwa energi yang \lipsum[26]
+Berdasarkan pelatihan yang dilakukan pada lima model berbeda, diperoleh hasil evaluasi kuantitatif pada data uji. Rangkuman mengenai metrik terbaik yang dicapai oleh masing-masing model ditunjukkan pada Tabel \ref{tb:classificationperf}.
+
+\input{tabel/classificationperf.tex}
+
+Analisis hasil menunjukkan bahwa model SwinV2 Transformer mencapai kinerja tertinggi secara konsisten di semua metrik dengan akurasi 93.82\% dan F1-Score 95.36\%. Keunggulan yang signifikan ini disebabkan oleh mekanisme \textit{shifted window attention} yang efektif menangkap konteks lokal maupun global pada citra artefak.
+
+Pada model berbasis CNN, DenseNet menunjukkan kinerja yang paling tinggi dengan akurasi 90.31\% mengungguli ResNet (88.90\%). Hal ini menunjukkan bahwa \textit{dense connections} pada DenseNet membantu dalam propagasi fitur yang lebih efisien dibandingkan \textit{residual connections} pada ResNet untuk tugas klasifikasi ini. Namun, secara keseluruhan, arsitektur Transformer menunjukkan potensi yang lebih besar dengan SwinV2 Transformer secara signifikan mengungguli model-model lainnya.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{gambar/swinv2-confusionmatrix.png}
+	\caption{\textit{Confusion Matrix} Model Terbaik (SwinV2 Transformer)}
+	\label{fig:confusionmatrixswinv2}
+\end{figure}
+
+
+Analisis lebih mendalam dilakukan menggunakan \textit{Confusion Matrix} pada model terbaik (SwinV2 Transformer) yang ditunjukkan pada Gambar \ref{fig:confusionmatrixswinv2} untuk memahami karakteristik prediksi model secara spesifik pada tiap kelas.
+
+\begin{sloppypar}
+	Analisis lebih mendalam terhadap Confusion Matrix pada model SwinV2 Transformer menunjukkan karakteristik prediksi yang sangat kuat dalam membedakan citra bersih dari citra dengan artefak. Namun, terdapat pola misklasifikasi yang spesifik jika ditinjau antar kategori artefak. Kesalahan prediksi paling signifikan terjadi pada diferensiasi antara artefak horizontal dengan artefak rotasi, dilanjutkan oleh kesalahan dalam membedakan artefak vertikal dengan artefak rotasi. Selain itu, terdapat pula kecenderungan model salah mengklasifikasikan artefak rotasi sebagai artefak horizontal, dengan frekuensi tertinggi mencapai 8 sampel pada kategori tersebut. Fenomena ini mengindikasikan bahwa pada irisan otak tertentu, distorsi spasial yang dihasilkan oleh gerakan rotasi memiliki kemiripan fitur tekstur dengan pola \textit{ghosting} atau \textit{blurring} linear yang dihasilkan oleh gerakan translasi secara horizontal maupun vertikal. Hal ini menyebabkan batas keputusan model menjadi sedikit samar di antara jenis-jenis gerakan tersebut.
+\end{sloppypar}
+
+\subsection{Evaluasi Modul Koreksi Citra}
+
+Pengujian modul koreksi dilakukan dengan membandingkan citra hasil restorasi \textit{Generator} terhadap citra asli untuk melihat sejauh mana kualitas citra dapat dipulihkan. Hasil evaluasi menunjukkan performa yang sangat baik dengan rata-rata nilai PSNR sebesar 35.75 dB dan SSIM sebesar 0.9166. Nilai PSNR yang tinggi ini menunjukkan keberhasilan model dalam menekan gangguan artefak dan noise, sehingga citra menjadi lebih bersih. Sementara itu, nilai SSIM yang berada di atas 0.91 membuktikan bahwa detail penting pada anatomi otak, seperti ventrikel dan batas jaringan, tetap terjaga dengan akurat tanpa mengalami perubahan struktur yang signifikan selama proses koreksi.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{gambar/gan-image-correction.png}
+	\caption{Perbandingan Visual Hasil Koreksi Citra MRI}
+	\label{fig:ganimagecompare}
+\end{figure}
+
+Secara kualitatif, perbandingan pada Gambar \ref{fig:ganimagecompare} memperlihatkan transformasi citra dari yang semula sedikit buram (\textit{ghosting}) menjadi citra yang jernih. Hasil prediksi \textit{Generator} terlihat hampir identik dengan citra target yang membuktikan bahwa Pix2Pix GAN efektif dalam memulihkan detail visual yang hilang akibat gerakan pasien. Model terbukti sangat mumpuni dalam membersihkan area latar belakang yang gelap sekaligus mempertajam kembali garis-garis anatomis otak. Dengan kualitas hasil rekonstruksi yang tinggi, citra tersebut  dapat diproses lebih lanjut oleh sistem diagnosis otomatis di tahap berikutnya.

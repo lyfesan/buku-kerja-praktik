@@ -19,7 +19,7 @@
 	Pembimbing Lapangan & : & Dr. Kelly Rossa Sungkono, S.Kom., M.Kom \\[4ex]
 \end{tabular}
 
-\vspace{2ex} % Vertical space before the abstract
+\vspace{1ex} % Vertical space before the abstract
 
 % --- ABSTRAK ---
 \begin{center}
@@ -27,10 +27,9 @@
 \end{center}
 
 % The abstract paragraph
-Ini Abstrak \lipsum[1][1-10]
+MRI (\textit{Magnetic Resonance Imaging}) otak merupakan instrumen diagnostik krusial yang efektivitasnya sering terhambat oleh munculnya artefak gerak (\textit{motion artifacts}) akibat durasi pemindaian yang lama. Artefak ini tidak hanya menurunkan kualitas visual bagi tenaga medis, tetapi juga secara signifikan mengurangi akurasi sistem kecerdasan buatan lanjutan seperti sistem \textit{image captioning} medis. Kerja praktik ini bertujuan mengembangkan kerangka kerja \textit{fault tolerance} yang terdiri dari modul klasifikasi untuk mendeteksi jenis artefak dan modul koreksi untuk memulihkan citra yang rusak. Metodologi penelitian ini mencakup simulasi artefak gerak berbasis manipulasi domain frekuensi (\textit{k-space}) untuk pembentukan dataset, pengembangan model klasifikasi menggunakan berbagai arsitektur \textit{deep learning}, serta implementasi modul koreksi citra. Pada modul klasifikasi, arsitektur SwinV2 Transformer memberikan performa terbaik dengan tingkat akurasi mencapai 93,82\% dan F1-Score 95,36\%, mengungguli model CNN konvensional dalam mengenali pola artefak yang kompleks. Sementara itu, modul koreksi yang menggunakan arsitektur Pix2Pix GAN berhasil merestorasi citra dengan perolehan rata-rata skor PSNR sebesar 35,75 dB dan SSIM sebesar 0,9166, yang mengindikasikan rendahnya \textit{noise} dan tingginya kemiripan struktur anatomi hasil rekonstruksi dengan citra asli. Secara keseluruhan, integrasi kedua modul ini berhasil membentuk sistem mitigasi yang andal untuk memastikan citra yang diteruskan ke tahap analisis medis selanjutnya memiliki kualitas yang layak untuk tahap diagnosis.
 
 \vspace{2ex} % Vertical space before keywords
 
-% --- KATA KUNCI ---
-\noindent\textbf{Kata Kunci :} Kata kunci
-
+% --- KATA KUNCI ---S
+\noindent\textbf{Kata Kunci :} MRI Otak, \textit{Motion Artifact}, SwinV2 Transformer, Pix2Pix GAN, \textit{Fault Tolerance}.
