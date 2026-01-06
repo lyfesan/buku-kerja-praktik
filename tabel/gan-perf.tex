@@ -1,0 +1,20 @@
+% Gunakan environment 'table' dengan opsi [H] agar tabel tidak terpotong
+\begin{table}[H]
+	\centering
+	\caption{Perbandingan Kinerja Metrik Model Klasifikasi}
+	\label{tb:gan-perf}
+	
+	\vspace{2ex}
+	
+	% Gunakan tabularx agar lebar pas \textwidth
+	% X = Kolom fleksibel (rata kiri, auto wrap)
+	% c = Kolom tengah (centered) untuk angka
+	\begin{tabularx}{\textwidth}{|X|c|c|c|}
+		\hline
+		\rowcolor[HTML]{C0C0C0}
+		\textbf{Metrik} & \textbf{Gambar Berartefak} & \textbf{Gambar Koreksi} & \textbf{Perbedaan}\\ \hline
+		
+		\textbf{PSNR} & 34.3287 dB & 32.8180 dB & -1.5107  \\ \hline
+		\textbf{SSIM} & 0.9061 & 0.9099 & +0.0038 \\ \hline
+	\end{tabularx}
+\end{table}

@@ -77,7 +77,7 @@ Metodologi dalam pembuatan buku kerja praktik ini meliputi:
 
   \item \textbf{Analisis dan Perancangan Sistem}
 
-  Tahap berikutnya adalah analisis dan perancangan sistem, yang dimulai dengan menganalisis karakteristik dataset BraTS dan menentukan kebutuhan praproses data yang diperlukan. Pada tahap ini, dirancang algoritma simulasi artefak yang berbasis pada manipulasi domain frekuensi (\textit{k-space}) untuk menghasilkan data latih yang realistis. Selain itu, arsitektur model klasifikasi dirancang dengan memanfaatkan strategi \textit{transfer learning}, sedangkan model koreksi dirancang menggunakan arsitektur GAN Pix2Pix untuk restorasi citra.
+  Tahap berikutnya adalah analisis dan perancangan sistem, yang dimulai dengan menganalisis karakteristik dataset BraTS dan menentukan kebutuhan praproses data yang diperlukan. Pada tahap ini, dirancang algoritma simulasi artefak yang berbasis pada manipulasi domain frekuensi (\textit{k-space}) untuk menghasilkan data latih yang realistis. Simulasi artefak dilakukan karena kurangnya sumber data artefak rill, dengan menggunakan parameter sesuai dengan skenario klinis asli yang didapatkan dari studi literatur. Selain itu, arsitektur model klasifikasi dirancang dengan memanfaatkan strategi \textit{transfer learning}, sedangkan model koreksi dirancang menggunakan arsitektur GAN Pix2Pix untuk restorasi citra.
 
   \item \textbf{Implementasi Sistem}
 

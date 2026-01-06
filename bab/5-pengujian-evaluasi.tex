@@ -59,7 +59,12 @@ Analisis lebih mendalam dilakukan menggunakan \textit{Confusion Matrix} pada mod
 
 \subsection{Evaluasi Modul Koreksi Citra}
 
-Pengujian modul koreksi dilakukan dengan membandingkan citra hasil restorasi \textit{Generator} terhadap citra asli untuk melihat sejauh mana kualitas citra dapat dipulihkan. Hasil evaluasi menunjukkan performa yang sangat baik dengan rata-rata nilai PSNR sebesar 35.75 dB dan SSIM sebesar 0.9166. Nilai PSNR yang tinggi ini menunjukkan keberhasilan model dalam menekan gangguan artefak dan noise, sehingga citra menjadi lebih bersih. Sementara itu, nilai SSIM yang berada di atas 0.91 membuktikan bahwa detail penting pada anatomi otak, seperti ventrikel dan batas jaringan, tetap terjaga dengan akurat tanpa mengalami perubahan struktur yang signifikan selama proses koreksi.
+Pengujian modul koreksi dilakukan dengan membandingkan citra berartefak dan citra hasil restorasi \textit{Generator} terhadap citra asli untuk melihat seberapa baik kemiripan citra yang  dikoreksi dengan citra aslinya jika dibandingkan dengan citra berartefak. Hasil evaluasi dari 200 sampel gambar tes ditunjukkan pada Tabel \ref{tb:gan-perf}. 
+
+\input{tabel/gan-perf.tex}
+
+Berdasarkan tabel evaluasi kuantitatif, hasil pengujian menunjukkan peningkatan nilai SSIM pada gambar hasil koreksi dibandingkan dengan baseline gambar berartefak. Peningkatan ini mengindikasikan bahwa model GAN berhasil merestorasi integritas struktural dan geometri anatomis citra medis, sehingga \textit{motion artifact} yang mengganggu visualisasi berhasil direduksi. Sebaliknya, nilai PSNR mengalami penurunan setelah dilakukan koreksi. Penurunan ini menunjukkan bahwa meskipun kualitas visual membaik, terdapat deviasi pada intensitas piksel absolut yang kemungkinan disebabkan oleh \textit{micro-texture generation} atau pergeseran piksel minor yang dilakukan oleh generator untuk meningkatkan ketajaman gambar. Hasil ini menegaskan bahwa model lebih berfokus pada kualitas kemiripan struktur gambar dibandingkan dengan kualitas akurasi pada level piksel.
+
 
 \begin{figure}[H]
 	\centering
@@ -68,4 +73,4 @@ Pengujian modul koreksi dilakukan dengan membandingkan citra hasil restorasi \te
 	\label{fig:ganimagecompare}
 \end{figure}
 
-Secara kualitatif, perbandingan pada Gambar \ref{fig:ganimagecompare} memperlihatkan transformasi citra dari yang semula sedikit buram (\textit{ghosting}) menjadi citra yang jernih. Hasil prediksi \textit{Generator} terlihat hampir identik dengan citra target yang membuktikan bahwa Pix2Pix GAN efektif dalam memulihkan detail visual yang hilang akibat gerakan pasien. Model terbukti sangat mumpuni dalam membersihkan area latar belakang yang gelap sekaligus mempertajam kembali garis-garis anatomis otak. Dengan kualitas hasil rekonstruksi yang tinggi, citra tersebut  dapat diproses lebih lanjut oleh sistem diagnosis otomatis di tahap berikutnya.
+Secara kualitatif, Gambar \ref{fig:ganimagecompare} menunjukkan kemampuan model dalam meningkatkan ketajaman visual citra yang semula kabur akibat artefak \textit{ghosting}. Alih-alih sekadar mencocokkan intensitas piksel, \textit{Generator} berfokus pada rekonstruksi tekstur dan tepi organ agar terlihat realistis. Hasilnya adalah area latar belakang menjadi lebih bersih dan garis-garis anatomis otak terlihat jauh lebih terlihat dibandingkan citra input. Peningkatan kualitas visual ini mengindikasikan bahwa model memprioritaskan pemulihan fitur-fitur penting yang diperlukan untuk interpretasi visual, meskipun secara statistik terdapat penurunan intensitas sinyal absolut.

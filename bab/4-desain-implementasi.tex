@@ -16,7 +16,7 @@ Sistem yang dikembangkan dalam kerja praktik ini adalah sebuah kerangka kerja \t
 
 \subsection{Desain Pembuatan Dataset Simulasi}
 
-Untuk melatih model koreksi citra dengan Pix2Pix, diperlukan pasangan data citra bersih dan artefak. Sistem ini menggunakan pendekatan simulasi berbasis domain frekuensi (\textit{k-space}) untuk melakukan simulasi artefak gerak sesuai dengan kondisi pada dunia nyata. Proses pembuatan dataset latih ditunjukkan pada Gambar \ref{fig:flowchart-dataset}.
+Untuk melatih model koreksi citra dengan Pix2Pix, diperlukan pasangan data citra bersih dan artefak.  Dataset asli yang digunakan dalam penelitian ini bersumber dari dataset BraTS (\textit{Brain Tumor Segmentation}) yang merupakan kumpulan citra MRI otak dalam format tiga dimensi (3D). Mengingat fokus utama pengembangan sistem saat ini adalah pemrosesan pada citra dua dimensi (2D), dilakukan proses ekstraksi pada \textit{slice} tengah dari setiap volume 3D untuk dijadikan representasi data yang akan diolah. Pemilihan irisan tengah ini bertujuan untuk mendapatkan luas penampang otak yang paling informatif untuk mempermudah model dalam mempelajari fitur anatomi yang kompleks. Sistem ini menggunakan pendekatan simulasi berbasis domain frekuensi (\textit{k-space}) untuk melakukan simulasi artefak gerak sesuai dengan kondisi pada dunia nyata. Proses pembuatan dataset latih ditunjukkan pada Gambar \ref{fig:flowchart-dataset}.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{gambar/flowchart-dataset.png}
@@ -28,7 +28,9 @@ Secara umum, proses simulasi artefak terdiri dari tiga bagian, yaitu:
 
 \begin{enumerate}[nolistsep]
 	\item Transformasi citra bersih ke \textit{k-space} domain frekuensi menggunakan \textit{Fast Fourier Transform} (FFT).
-	\item Simulasi artefak dengan menggabungkan (\textit{splicing}) garis-garis frekuensi dari citra diam dan citra yang dilakukan translasi atau rotasi. Hal ini meniru inkonsistensi fase yang terjadi ketika pasien bergerak selama pemindaian MRI.
+
+	\item Simulasi artefak dengan menggabungkan (\textit{splicing}) garis-garis frekuensi dari citra diam dengan citra yang telah dimanipulasi secara geometris. Pada tahap ini, parameter pergeseran untuk translasi ditetapkan antara 5 hingga 20 piksel, sedangkan untuk rotasi ditetapkan antara 3 hingga 15 derajat. Proses ini meniru inkonsistensi fase yang terjadi ketika pasien bergerak selama pemindaian MRI. 
+
 	\item Rekonstruksi citra dari data \textit{corrupt k-space} dikembalikan ke domain spasial menggunakan \textit{Inverse FFT} untuk menghasilkan artefak \textit{ghosting} dan \textit{streaking} yang realistis.
 \end{enumerate}
 
