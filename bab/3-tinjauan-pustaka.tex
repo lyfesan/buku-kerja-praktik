@@ -9,15 +9,42 @@
 
 \section{Artefak MRI}
 
-Artefak dalam pencitraan MRI merupakan masalah yang timbul karena akuisisi citra yang lambat dan sekuensial, dimana data dikumpulkan pada k-ruang (\textit{k-space}) \citep{Liu2020}. Dalam pencitraan otak, artefak gerak (\textit{motion artifacts}) adalah jenis degradasi citra yang paling sering ditemui \citep{Sommer2020}. Artefak ini timbul dari gerakan pasien, baik secara sengaja maupun tidak disengaja karena proses yang dibutuhkan untuk mengumpulkan data citra cukup lama \citep{Al-masni2022}. Gerakan ini umumnya dikategorikan sebagai \textit{rigid body motion} yang meliputi translasi horizontal, translasi vertikal, dan rotasi. Translasi menyebabkan terjadinya pergeseran fase atau \textit{phase ramp} pada data \textit{k-space} yang dikumpulkan. Sementara itu, rotasi menyebabkan perubahan orientasi pada \textit{k-space} ketika komponen frekuensi spasial objek berputar terhadap gradien \textit{encoding}. Hal ini mengakibatkan kepadatan (\textit{density}) pengambilan sampel di beberapa area \textit{k-space} jatuh di bawah batas Nyquist yang memicu munculnya artefak berupa garis-garis (\textit{streaking}) \citep{Zaitsev2015}. Secara visual, artefak gerakan biasanya tampak sebagai \textit{blur} atau bayangan (\textit{ghosting}) pada \textit{phase encoding direction}, yang dapat menurunkan kualitas citra hingga tidak dapat digunakan untuk diagnosis \citep{Liu2020}. Bahkan, artefak gerakan dapat memengaruhi 10\% hingga 42\% pemeriksaan MRI otak, dan dapat menimbulkan bias sistematis dalam perkiraan morfometrik struktur otak \citep{Sommer2020, Vakli2023}.
+Artefak dalam pencitraan MRI merupakan masalah yang timbul karena akuisisi citra yang lambat dan sekuensial, dimana data dikumpulkan pada k-ruang (\textit{k-space}) \citep{Liu2020}. Dalam pencitraan otak, artefak gerak (\textit{motion artifacts}) adalah jenis degradasi citra yang paling sering ditemui \citep{Sommer2020}. Artefak ini timbul dari gerakan pasien, baik secara sengaja maupun tidak disengaja karena proses yang dibutuhkan untuk mengumpulkan data citra cukup lama \citep{Al-masni2022}. Gerakan ini umumnya dikategorikan sebagai \textit{rigid body motion} yang meliputi translasi horizontal, translasi vertikal, dan rotasi. Translasi menyebabkan terjadinya pergeseran fase atau \textit{phase ramp} pada data \textit{k-space} yang dikumpulkan. Sementara itu, rotasi menyebabkan perubahan orientasi pada \textit{k-space} ketika komponen frekuensi spasial objek berputar terhadap gradien \textit{encoding}. Hal ini mengakibatkan kepadatan (\textit{density}) pengambilan sampel di beberapa area \textit{k-space} jatuh di bawah batas Nyquist yang memicu munculnya artefak berupa garis-garis (\textit{streaking}) \citep{Zaitsev2015}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{gambar/mri-artifact.png}
+	\caption{Gambaran Artefak pada MRI \citep{Zaitsev2015}}
+	\label{fig:mri-artifact}
+\end{figure}
+
+Secara visual, artefak gerakan biasanya tampak sebagai \textit{blur} atau bayangan (\textit{ghosting}) pada \textit{phase encoding direction}, yang diilustrasikan pada Gambar \ref{fig:mri-artifact}. Hal ini dapat menurunkan kualitas citra hingga tidak dapat digunakan untuk diagnosis \citep{Liu2020}. Bahkan, artefak gerakan dapat memengaruhi 10\% hingga 42\% pemeriksaan MRI otak, dan dapat menimbulkan bias sistematis dalam perkiraan morfometrik struktur otak \citep{Sommer2020, Vakli2023}.
 
 \section{\textit{ResNet}}
 
-ResNet (\textit{Residual Network}) adalah arsitektur \textit{deep neural network} yang dirancang untuk mengatasi masalah degradasi performa pada \textit{deep network} dengan menggunakan mekanisme \textit{residual learning} melalui \textit{shortcut connections} yang melakukan pemetaan identitas dan menambahkan \textit{output}-nya ke \textit{output} pada \textit{stacked layers} \citep{He2015}. Arsitektur ini telah menjadi dasar bagi banyak varian dan pengembangan, seperti Res2Net yang memperkenalkan koneksi residual hierarkis dalam satu blok residual untuk meningkatkan representasi fitur \textit{multiscale}, sehingga meningkatkan kinerja pada berbagai tugas visi komputer \citep{Gao2021}. Dalam bidang pengolahan citra medis, ResNet telah banyak digunakan untuk diagnosis berbagai penyakit seperti tumor paru, kanker payudara, dan gangguan otak, dengan kemampuan adaptasi yang baik terhadap data medis dan memberikan hasil yang baik dalam diagnosis dengan bantuan komputer \citep{Xu2023}.
+ResNet (\textit{Residual Network}) adalah arsitektur \textit{deep neural network} yang dirancang untuk mengatasi masalah degradasi performa pada \textit{deep network} dengan menggunakan mekanisme \textit{residual learning} melalui \textit{shortcut connections} yang melakukan pemetaan identitas dan menambahkan \textit{output} tersebut pada \textit{stacked layers} \citep{He2015}. Ilustrasi mengenai \textit{residual learning} ditunjukkan oleh Gambar \ref{fig:resnet} 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{gambar/resnet.png}
+	\caption{Mekanisme \textit{Residual Learning} \citep{He2015}}
+	\label{fig:resnet}
+\end{figure}
+
+Arsitektur ini telah menjadi dasar bagi banyak varian dan pengembangan, seperti Res2Net yang memperkenalkan koneksi residual hierarkis dalam satu blok residual untuk meningkatkan representasi fitur \textit{multiscale}, sehingga meningkatkan kinerja pada berbagai tugas visi komputer \citep{Gao2021}. Dalam bidang pengolahan citra medis, ResNet telah banyak digunakan untuk diagnosis berbagai penyakit seperti tumor paru, kanker payudara, dan gangguan otak, dengan kemampuan adaptasi yang baik terhadap data medis dan memberikan hasil yang baik dalam diagnosis dengan bantuan komputer \citep{Xu2023}.
 
 \section{\textit{DenseNet}}
 
-DenseNet adalah arsitektur \textit{convolutional neural network} yang menghubungkan setiap lapisan secara langsung dengan semua lapisan sebelumnya sehingga meningkatkan efisiensi pemanfaatan fitur dan mengatasi masalah \textit{vanishing gradient}. Dalam bidang medis, DenseNet telah banyak diterapkan untuk segmentasi dan klasifikasi citra medis dengan hasil yang baik. DRINet menggabungkan blok konvolusi dengan koneksi \textit{dense} dan modul \textit{residual inception} untuk segmentasi multi kelas pada citra CT dan MRI otak, menunjukkan performa lebih baik dibandingkan U-Net tradisional \citep{Vulli2022}. DenseNet juga digunakan dalam klasifikasi citra histopatologi kanker payudara dengan melakukan \textit{interleaving} modul \textit{squeeze-and-excitation} (SENet) yang meningkatkan akurasi klasifikasi dibandingkan metode lain \citep{Li2020}. Selain itu, model ringan yang menggabungkan PCANet dan DenseNet berhasil meningkatkan klasifikasi citra mamografi dan histologi osteosarkoma dengan pelatihan yang lebih efisien pada dataset kecil \citep{Huang2020}. Strategi \textit{fine-tuning} DenseNet pada berbagai modalitas citra medis juga menunjukkan peningkatan performa signifikan yang menunjukkan fleksibilitas dan keunggulan DenseNet dalam aplikasi medis \citep{Davila2024}.
+\textit{DenseNet} adalah arsitektur \textit{convolutional neural network} yang menghubungkan setiap lapisan secara langsung dengan semua lapisan sebelumnya sehingga meningkatkan efisiensi pemanfaatan fitur dan mengatasi masalah \textit{vanishing gradient}. Ilustrasi arsitektur \textit{DenseNet} dapat dilihat pada Gambar \ref{fig:densenet}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{gambar/densenet.png}
+	\caption{Arsitektur DenseNet \citep{Huang2018}}
+	\label{fig:densenet}
+\end{figure}
+
+Dalam bidang medis, DenseNet telah banyak diterapkan untuk segmentasi dan klasifikasi citra medis dengan hasil yang baik. DRINet menggabungkan blok konvolusi dengan koneksi \textit{dense} dan modul \textit{residual inception} untuk segmentasi multi kelas pada citra CT dan MRI otak, menunjukkan performa lebih baik dibandingkan U-Net tradisional \citep{Vulli2022}. DenseNet juga digunakan dalam klasifikasi citra histopatologi kanker payudara dengan melakukan \textit{interleaving} modul \textit{squeeze-and-excitation} (SENet) yang meningkatkan akurasi klasifikasi dibandingkan metode lain \citep{Li2020}. Selain itu, model ringan yang menggabungkan PCANet dan DenseNet berhasil meningkatkan klasifikasi citra mamografi dan histologi osteosarkoma dengan pelatihan yang lebih efisien pada dataset kecil \citep{Huang2020}. Strategi \textit{fine-tuning} DenseNet pada berbagai modalitas citra medis juga menunjukkan peningkatan performa signifikan yang menunjukkan fleksibilitas dan keunggulan DenseNet dalam aplikasi medis \citep{Davila2024}.
 
 \section{\textit{EfficientNet}}
 
@@ -25,15 +52,43 @@ EfficientNet adalah arsitektur CNN yang mengoptimalkan keseimbangan antara kedal
 
 \section{\textit{Vision} Transformer (ViT)}
 
-\textit{Vision} Transformer (ViT) memodelkan citra sebagai urutan \textit{patch} dan menggunakan \textit{self‑attention} untuk menangkap dependensi jarak jauh serta konteks global, sehingga melengkapi CNN yang hanya memiliki \textit{receptive field lokal} \citep{Shamshad2023}. Dalam bidang medis, ViT banyak dipakai untuk klasifikasi, segmentasi, deteksi, registrasi, dan rekonstruksi, serta seringkali digabungkan dengan CNN dalam arsitektur hibrida agar fitur lokal dan global dapat diekstraksi secara bersamaan \citep{Hussain2025, Xiao2023}. Berbagai studi dan tinjauan menunjukkan bahwa model berbasis transformer ini umumnya melampaui atau setidaknya menyaingi CNN/U‑Net konvensional pada tugas segmentasi organ dan tumor, klasifikasi tumor otak, kanker payudara histopatologi, dan diagnosis retina \citep{Al-hammuri2023, Aburass2025}.
+\textit{Vision} Transformer (ViT) memodelkan citra sebagai urutan \textit{patch} dan menggunakan \textit{self‑attention} untuk menangkap dependensi jarak jauh serta konteks global, sehingga melengkapi CNN yang hanya memiliki \textit{receptive field lokal} \citep{Shamshad2023}. Secara umum, ViT memperlakukan
+citra dua dimensi sebagai urutan token (patch citra) dan memprosesnya dengan encoder Transformer standar sehingga struktur dasarnya mirip dengan Transformer untuk NLP yang ditambahkan tahap tokenisasi citra dan penambahan positional embedding \citep{Wang2025}. Arsitektur ViT dapat dilihat pada Gambar \ref{fig:vit}.
 
-\section{SwinV2 Transformer}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{gambar/vit.png}
+	\caption{Arsitektur \textit{Vision} Transformer \citep{Dosovitskiy2021}}
+	\label{fig:vit}
+\end{figure}
 
-Swin Transformer V2 (SwinV2) adalah pengembangan dari Swin Transformer yang menggunakan mekanisme \textit{self-attention} dalam jendela geser untuk menangkap dependensi lokal dan global secara efisien dengan kompleksitas komputasi rendah. Model ini menggabungkan konvolusi dan \textit{self-attention} melalui struktur seperti Swin Transformer \textit{Stem} dan \textit{dual-branch downsampling} untuk meningkatkan ekstraksi fitur, serta menggunakan teknik stabilisasi pelatihan seperti \textit{residual post normalization} dan \textit{scaled cosine attention} agar dapat dilatih pada resolusi tinggi dan model besar hingga 3 miliar parameter \citep{Liu2022}. SwinV2 telah diterapkan dalam berbagai bidang, termasuk segmentasi polip usus dengan model hibrida CNN-Transformer yang menunjukkan performa unggul pada dataset benchmark, serta segmentasi 3D medis dengan SwinUNETR-V2 yang menggabungkan konvolusi bertahap untuk hasil lebih baik \citep{Fitzgerald2024, He2023}. Pendekatan hierarkis dan \textit{shifted windows} membuat SwinV2 mampu mengoptimalkan efisiensi dan efektivitas pemodelan konteks spasial pada citra kompleks \citep{Liu2022}. Dengan peningkatan stabilitas, skalabilitas, dan kemampuan generalisasi, SwinV2 menjadi model kuat untuk pengolahan citra dan aplikasi medis
+ Dalam bidang medis, ViT banyak dipakai untuk klasifikasi, segmentasi, deteksi, registrasi, dan rekonstruksi, serta seringkali digabungkan dengan CNN dalam arsitektur hibrida agar fitur lokal dan global dapat diekstraksi secara bersamaan \citep{Hussain2025, Xiao2023}. Berbagai studi dan tinjauan menunjukkan bahwa model berbasis transformer ini umumnya melampaui atau setidaknya menyaingi CNN/U‑Net konvensional pada tugas segmentasi organ dan tumor, klasifikasi tumor otak, kanker payudara histopatologi, dan diagnosis retina \citep{Al-hammuri2023, Aburass2025}.
+
+\section{Swin Transformer V2}
+
+Swin Transformer V2 (SwinV2) adalah pengembangan dari Swin Transformer yang menggunakan mekanisme \textit{self-attention} dalam jendela geser untuk menangkap dependensi lokal dan global secara efisien dengan kompleksitas komputasi rendah. Model ini menggabungkan konvolusi dan \textit{self-attention} melalui struktur seperti Swin Transformer \textit{Stem} dan \textit{dual-branch downsampling} untuk meningkatkan ekstraksi fitur, serta menggunakan teknik stabilisasi pelatihan seperti \textit{residual post normalization} dan \textit{scaled cosine attention} yang ditunjukkan pada Gambar \ref{fig:swinv2} agar dapat dilatih pada resolusi tinggi dan model besar hingga 3 miliar parameter \citep{Liu2022}. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{gambar/swinv2.png}
+	\caption{Arsitektur Swin Transformer V2 \citep{Liu2022}}
+	\label{fig:swinv2}
+\end{figure}
+
+SwinV2 telah diterapkan dalam berbagai bidang, termasuk segmentasi polip usus dengan model hibrida CNN-Transformer yang menunjukkan performa unggul pada dataset benchmark, serta segmentasi 3D medis dengan SwinUNETR-V2 yang menggabungkan konvolusi bertahap untuk hasil lebih baik \citep{Fitzgerald2024, He2023}. Pendekatan hierarkis dan \textit{shifted windows} membuat SwinV2 mampu mengoptimalkan efisiensi dan efektivitas pemodelan konteks spasial pada citra kompleks \citep{Liu2022}. Dengan peningkatan stabilitas, skalabilitas, dan kemampuan generalisasi, SwinV2 menjadi model kuat untuk pengolahan citra dan aplikasi medis.
 
 \section{\textit{Generative Adversarial Network}}
 
-Generative Adversarial Networks (GAN) adalah model generatif yang terdiri dari dua jaringan, yaitu \textit{generator} dan \textit{discriminator} yang dilatih secara kompetitif untuk menghasilkan data baru yang realistis dari distribusi data asli \citep{Gui2023}. GAN banyak digunakan dalam bidang medis, terutama untuk pengolahan citra medis seperti fusi citra, augmentasi data, segmentasi, dan rekonstruksi gambar. GAN mampu menghasilkan citra medis sintetis yang realistis, membantu mengatasi keterbatasan data pelatihan dan ketidakseimbangan kelas pada dataset medis \citep{Zhou2023, Jeong2022}. Berbagai varian GAN seperti cGAN dan DCGAN sering dipakai untuk meningkatkan kualitas dan kuantitas data medis pada modalitas seperti MRI, CT, dan X-ray, serta organ seperti otak, dada, dan payudara \citep{Makhlouf2023}. Selain itu, GAN juga digunakan untuk deteksi penyakit, klasifikasi, dan peningkatan resolusi citra medis, yang mendukung diagnosis dan pelatihan klinis \citep{Islam2024, Alamir2023}.
+Generative Adversarial Networks (GAN) adalah model generatif yang terdiri dari dua jaringan, yaitu \textit{generator} dan \textit{discriminator} yang dilatih secara kompetitif untuk menghasilkan data baru yang realistis dari distribusi data asli \citep{Gui2023}. Gambaran umum mengenai GAN ditunjukkan pada Gambar \ref{fig:gan}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{gambar/gan.png}
+	\caption{Struktur \textit{Generative Adversarial Network}}
+	\label{fig:gan}
+\end{figure}
+
+GAN banyak digunakan dalam bidang medis, terutama untuk pengolahan citra medis seperti fusi citra, augmentasi data, segmentasi, dan rekonstruksi gambar. GAN mampu menghasilkan citra medis sintetis yang realistis, membantu mengatasi keterbatasan data pelatihan dan ketidakseimbangan kelas pada dataset medis \citep{Zhou2023, Jeong2022}. Berbagai varian GAN seperti cGAN dan DCGAN sering dipakai untuk meningkatkan kualitas dan kuantitas data medis pada modalitas seperti MRI, CT, dan X-ray, serta organ seperti otak, dada, dan payudara \citep{Makhlouf2023}. Selain itu, GAN juga digunakan untuk deteksi penyakit, klasifikasi, dan peningkatan resolusi citra medis, yang mendukung diagnosis dan pelatihan klinis \citep{Islam2024, Alamir2023}.
 
 \section{Pix2Pix}
 

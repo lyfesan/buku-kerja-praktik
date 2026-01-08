@@ -114,6 +114,7 @@
 
 % Set penomoran subsubsection menjadi alphabetic
 \renewcommand{\thesubsubsection}{\Alph{subsubsection}}
+\usepackage{notoccite}
 
 % Pengaturan persamaan
 \newenvironment{conditions}
@@ -147,18 +148,19 @@
 % Mengganti figure dan table menjadi gambar dan tabel
 \renewcommand{\figurename}{Gambar}
 \renewcommand{\tablename}{Tabel}
-\renewcommand{\lstlistingname}{Kode}
+\renewcommand{\lstlistingname}{Kode Sumber}
 % Isi keseluruhan dokumen
 \begin{document}
   % Gunakan font Times New Roman
   \setmainfont{Times New Roman}
   % Nomor halaman pembuka dimulai dari sini
-  \pagenumbering{roman}
+  \pagenumbering{gobble}
 
   % Sampul luar
   {
   	\setmainfont{Trebuchet MS}\color{white}
   	\input{sampul/sampul-luar.tex}
+  	
   }
   
 
@@ -166,11 +168,12 @@
   {
   	\setmainfont{Trebuchet MS}
   	\input{sampul/sampul-dalam.tex}
-  	%\cleardoublepage
+%  	\cleardoublepage
   }
   
   \halamankosong
   
+  \pagenumbering{roman}
    % Daftar isi
   \renewcommand*\contentsname{DAFTAR ISI}
   \phantomsection
@@ -197,7 +200,7 @@
   \cleardoublepage
   
   % Daftar kode
-  \renewcommand*\lstlistlistingname{DAFTAR KODE}
+  \renewcommand*\lstlistlistingname{DAFTAR KODE SUMBER}
   \lstlistoflistings
   \addcontentsline{toc}{chapter}{\lstlistlistingname}
   \cleardoublepage

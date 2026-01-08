@@ -4,17 +4,17 @@
 
 \section{Kesimpulan}
 
-Berdasarkan seluruh rangkaian kegiatan kerja praktik yang telah dilakukan mulai dari perancangan hingga pengujian sistem fault tolerance untuk mitigasi artefak gerak pada citra MRI otak, dapat ditarik beberapa kesimpulan utama sebagai berikut.
+Berdasarkan seluruh rangkaian kegiatan kerja praktik yang telah dilakukan mulai dari perancangan hingga pengujian sistem \textit{fault tolerance} untuk mitigasi artefak gerak pada citra MRI otak, dapat ditarik beberapa kesimpulan utama sebagai berikut.
 
 \begin{enumerate}[nolistsep]
 
-  \item Simulasi \textit{motion artifact} yang dilakukan melalui manipulasi domain frekuensi atau k-space dapat menghasilkan dataset pelatihan yang realistis dan mampu meniru kondisi klinis sebenarnya.
+  \item Simulasi artefak gerak berupa translasi dan rotasi berhasil dilakukan dengan memanipulasi data citra pada domain frekuensi (\textit{k-space}) untuk menghasilkan dataset pelatihan sintetis yang realistis dan meniru inkonsistensi pada mesin MRI.
 
-  \item Penggunaan arsitektur berbasis Transformer memberikan keunggulan yang signifikan dibandingkan model konvensional CNN dengan model SwinV2 Transformer sebagai model terbaik yang mencatatkan akurasi sebesar 93.82 persen dan F1-Score sebesar 95.36 persen.
+  \item Pengembangan model klasifikasi menggunakan strategi transfer learning menunjukkan bahwa arsitektur berbasis Transformer, terutama SwinV2 Transformer, memiliki keunggulan dibandingkan arsitektur CNN dalam menangkap pola artefak yang kompleks baik secara lokal maupun global.
 
-  \item Modul koreksi berbasis Pix2Pix GAN dapat memulihkan integritas struktural dan ketajaman visual citra yang terdegradasi. Evaluasi menunjukkan peningkatan nilai SSIM yang menunjukkan keberhasilan rekonstruksi batas-batas anatomi otak, meskipun diiringi dengan penurunan nilai PSNR sebagai konsekuensi dari karakteristik model generatif yang memprioritaskan kualitas secara persepsi dibandingkan akurasi intensitas piksel absolut.
+  \item Modul koreksi artefak berhasil dikembangkan menggunakan arsitektur Pix2Pix GAN yang mampu memulihkan detail anatomi sekaligus menghilangkan pola \textit{ghosting} dan \textit{blurring} pada citra dengan memanfaatkan fungsi \textit{loss} gabungan.
   
-  \item Integrasi antara modul klasifikasi dan modul koreksi membentuk kerangka kerja fault tolerance yang andal untuk memastikan citra yang diteruskan ke tahap analisis selanjutnya memiliki kualitas yang layak untuk diagnosis.
+  \item Hasil evaluasi menunjukkan kinerja sistem yang sangat baik dimana modul klasifikasi terbaik mencapai akurasi 93,82\% dan hasil generasi gambar modul koreksi menghasilkan kenaikan skor SSIM dibandingkan dengan gambar dengan artefak meskipun skor PSNR menunjukkan penurunan, yang menunjukkan bahwa model berfokus pada pemulihan fitur-fitur penting yang meningkatkan kualitas visual gambar dibandingkan dengan perbaikan kualitas pada level piksel.
 
 \end{enumerate}
 
