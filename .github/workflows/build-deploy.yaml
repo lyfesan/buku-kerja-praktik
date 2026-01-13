@@ -10,21 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check Out
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v6.0.1
 
-      - name: Compile Document
-        uses: xu-cheng/latex-action@4.0.0
+      - name: Compile Document with TeX Live
+        uses: xu-cheng/texlive-action@v3
         with:
-          root_file: main.tex
-          latexmk_use_xelatex: true
           texlive_version: 2025
-          args: -pdf -bibtex
+          scheme: full
+          run: |
+            # Install Microsoft TrueType core fonts package
+            apk add --no-cache msttcorefonts-installer fontconfig
+            update-ms-fonts
+            fc-cache -f
+            # Compile using xelatex with bibliography
+            latexmk -xelatex -bibtex -file-line-error -halt-on-error -interaction=nonstopmode main.tex
 
       - name: Rename document
         run: mkdir dist && mv main.pdf dist/buku-kp.pdf
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3.0.1
+        uses: actions/upload-pages-artifact@v4.0.0
         with:
           path: dist
 
